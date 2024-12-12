@@ -3,24 +3,25 @@
     "title": "Hello World from vFly",
     "body": "vFly planes go vroom"
   },
-  "JoinPage":{
+  "JoinPage": {
     "title": "Join us",
     "body": "Join us and fly with us"
   },
-  "ContactPage":{
+  "ContactPage": {
     "title": "Contact us",
     "body": "Contact us and fly with us"
   },
-  "ProjectsPage":{
+  "ProjectsPage": {
     "title": "Our Projects",
     "body": "Our Projects"
   },
-  "Components":{
+  "Components": {
     "Navbar": {
       "home": "Home",
       "projects": "Projects",
       "contact": "Contact",
-      "join": "Join US!"
+      "join": "Join US!",
+      "lang": "En"
     }
   }
 }
