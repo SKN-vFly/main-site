@@ -1,6 +1,26 @@
 {
   "MainPage": {
-    "title": "Siemaneczko witamy w vFly",
-    "body": "Samoloty vFly lecą wziuuuu"
+    "title": "Hello World from vFly",
+    "body": "vFly planes go vroom"
+  },
+  "JoinPage": {
+    "title": "Join us",
+    "body": "Join us and fly with us"
+  },
+  "ContactPage": {
+    "title": "Contact us",
+    "body": "Contact us and fly with us"
+  },
+  "ProjectsPage": {
+    "title": "Our Projects",
+    "body": "Our Projects"
+  },
+  "Components": {
+    "Navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "contact": "Contact",
+      "join": "Join"
+    }
   }
 }

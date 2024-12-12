@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
+
 const robotoSans = Roboto({
   weight: ["400", "700"],
 });
@@ -23,13 +24,9 @@ export default async function RootLayout(
 ) {
   const params = await props.params;
 
-  const {
-    locale
-  } = params;
+  const { locale } = params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   // Ensure that the incoming `locale` is valid
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,8 +38,8 @@ export default async function RootLayout(
   return (
     <html lang={locale}>
       <body className={`${robotoSans.className} antialiased`}>
-        <Navbar />
         <NextIntlClientProvider messages={messages}>
+          <Navbar />
           {children}
         </NextIntlClientProvider>
       </body>
