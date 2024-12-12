@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 
 const robotoSans = Roboto({
   weight: ["400", "700"],
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
