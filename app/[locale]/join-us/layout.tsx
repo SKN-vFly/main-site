@@ -13,7 +13,7 @@ export default async function Layout(
     params: { locale: string };
   }>
 ) {
-  const params = props.params;
+  const params = await props.params;
 
   const { locale } = params;
 
