@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Navbar from "@/components/Navbar";
 const robotoSans = Roboto({
   weight: ["400", "700"],
 });
@@ -40,6 +41,7 @@ export default async function RootLayout(
   return (
     <html lang={locale}>
       <body className={`${robotoSans.className} antialiased`}>
+        <Navbar />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
