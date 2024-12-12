@@ -29,3 +29,7 @@ docker compose up
 - NPM
 - TypeScript
 - Tailwind > style w CSS
+
+## Dokumentacja do bibliotek
+
+- [next-intl](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing)
