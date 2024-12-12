@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -17,7 +17,7 @@ const Navbar = () => {
         <li className={"border border-white p-2 rounded-lg"}>
           <Link href="/contact">{t("contact")}</Link>
         </li>
-        <li className={"border border-white p-4 rounded-lg"}>
+        <li className={"border border-white p-2 rounded-lg"}>
           <Link href="/join-us">{t("join")}</Link>
         </li>
       </ul>
