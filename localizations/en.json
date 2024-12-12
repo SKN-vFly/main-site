@@ -14,5 +14,13 @@
   "ProjectsPage":{
     "title": "Our Projects",
     "body": "Our Projects"
+  },
+  "Components":{
+    "Navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "contact": "Contact",
+      "join": "Join"
+    }
   }
 }
