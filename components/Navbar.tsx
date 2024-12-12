@@ -7,7 +7,7 @@ import { useState } from "react";
 const Navbar = () => {
   const t = useTranslations("Components.Navbar");
   return (
-    <nav className="p-4 bg-black border-b border-white">
+    <nav className="p-4 bg-black border-b border-white whitespace-nowrap">
       <ul className="flex justify-end space-x-4 ">
         <li className={"p-2"}>
           <Link href="/">logo</Link>
@@ -26,9 +26,7 @@ const Navbar = () => {
         <li className={"border border-white p-2 text-center rounded-lg"}>
           <Link href="/contact">{t("contact")}</Link>
         </li>
-        <li
-          className={"border border-white p-2 text-center rounded-lg min-w-20"}
-        >
+        <li className={"border border-white p-2 text-center rounded-lg"}>
           <Link href="/join-us">{t("join")}</Link>
         </li>
       </ul>
