@@ -1,26 +1,27 @@
 {
   "MainPage": {
-    "title": "Hello World from vFly",
-    "body": "vFly planes go vroom"
+    "title": "Witaj Świecie z vFly",
+    "body": "Samoloty vFly lecą ziuuuum"
   },
   "JoinPage": {
-    "title": "Join us",
-    "body": "Join us and fly with us"
+    "title": "Dołącz do nas",
+    "body": "Dołącz do nas i leć z nami"
   },
   "ContactPage": {
-    "title": "Contact us",
-    "body": "Contact us and fly with us"
+    "title": "Skontaktuj się z nami",
+    "body": "Skontaktuj się z nami i leć z nami"
   },
   "ProjectsPage": {
-    "title": "Our Projects",
-    "body": "Our Projects"
+    "title": "Nasze Projekty",
+    "body": "Nasze Projekty które lecą ziuuum"
   },
   "Components": {
     "Navbar": {
-      "home": "Home",
-      "projects": "Projects",
-      "contact": "Contact",
-      "join": "Join"
+      "home": "O nas",
+      "projects": "Projekt",
+      "contact": "Kontakt",
+      "join": "Dołącz",
+      "lang": "Pl"
     }
   }
 }
