@@ -10,6 +10,7 @@ Wypociny LR i BS
 
 ```cmd
 git clone https://github.com/SKN-vFly/main-site.git
+cd main-site
 npm install
 npm run dev
 ```
@@ -18,6 +19,7 @@ npm run dev
 
 ```cmd
 git clone https://github.com/SKN-vFly/main-site.git
+cd main-site
 docker compose build
 docker compose up
 ```
