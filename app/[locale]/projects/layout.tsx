@@ -20,8 +20,8 @@ export default async function Layout(
   const { children } = props;
 
   // Ensure that the incoming `locale` is valid
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if (!routing.locales.includes(locale as any)) {
+
+  if (!routing.locales.includes(locale as "pl" | "en")) {
     notFound();
   }
   return children;

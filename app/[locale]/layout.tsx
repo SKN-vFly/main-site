@@ -29,15 +29,15 @@ export default async function RootLayout(
   const { children } = props;
 
   // Ensure that the incoming `locale` is valid
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if (!routing.locales.includes(locale as any)) {
+
+  if (!routing.locales.includes(locale as "en" | "pl")) {
     notFound();
   }
 
   const messages = await getMessages();
   return (
-    <html lang={locale}>
-      <body className={`${robotoSans.className} antialiased`}>
+    <html lang={locale} className={`${robotoSans.className}`}>
+      <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
