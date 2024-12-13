@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const robotoSans = Roboto({
   weight: ["400", "700"],
@@ -41,6 +42,7 @@ export default async function RootLayout(
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
+          <ScrollToTop />
           {children}
         </NextIntlClientProvider>
       </body>
