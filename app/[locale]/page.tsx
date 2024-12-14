@@ -5,7 +5,7 @@ import { localeArray } from "@/i18n/routing";
 export default function Landing() {
   const t = useTranslations("MainPage");
   return (
-    <div className="px-4 lg:w-[66%] lg:px-0 mx-auto min-h-[600vh]">
+    <div className="w-full min-h-[600vh]">
       <MediaHeader text={t("title")} />
       <div className="p-4 mx-auto w-[60%]">
         <h2>{t("subtitle")}</h2>

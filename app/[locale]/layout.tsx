@@ -43,7 +43,7 @@ export default async function RootLayout(
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <ScrollToTop />
-          {children}
+          <main className="px-4 lg:w-[66%] lg:px-0 mx-auto">{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>
