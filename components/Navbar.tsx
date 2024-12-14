@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Components.Navbar");
@@ -58,7 +59,8 @@ function LangSwitcher() {
   // On hover, show the other languages
   const [showLangsClicked, setShowLangsClicked] = useState(false);
   const [showLangsHovered, setShowLangsHovered] = useState(false);
-
+  const url = usePathname();
+  console.log(`/${url.split("/").slice(2).join("/")}`);
   return (
     <div
       className="relative"
@@ -81,14 +83,14 @@ function LangSwitcher() {
         }`}
       >
         <Link
-          href="/"
+          href={`/${url.split("/").slice(2).join("/")}`}
           locale="en"
           className="p-1 m-1 border border-white rounded-sm"
         >
           English
         </Link>
         <Link
-          href="/"
+          href={`/${url.split("/").slice(2).join("/")}`}
           locale="pl"
           className="p-1 m-1 border border-white rounded-sm"
         >
