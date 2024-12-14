@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, redirect } from "@/i18n/routing";
+import type { localeType } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,8 +21,8 @@ export default async function Layout(
 
   // Ensure that the incoming `locale` is valid
 
-  if (!routing.locales.includes(locale as "pl" | "en")) {
-    notFound();
+  if (!routing.locales.includes(locale as localeType)) {
+    redirect({ href: "/projects", locale: routing.defaultLocale });
   }
   return children;
 }

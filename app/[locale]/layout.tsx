@@ -3,8 +3,8 @@ import { Roboto } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, redirect } from "@/i18n/routing";
+import type { localeType } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -32,8 +32,8 @@ export default async function RootLayout(
 
   // Ensure that the incoming `locale` is valid
 
-  if (!routing.locales.includes(locale as "en" | "pl")) {
-    notFound();
+  if (!routing.locales.includes(locale as localeType)) {
+    redirect({ href: "/", locale: routing.defaultLocale });
   }
 
   const messages = await getMessages();
