@@ -25,7 +25,7 @@ export function ProjectComponent(props: {
     <>
       {!clicked ? (
         <div
-          className={`border border-white rounded-2xl p-2 transition-all ${
+          className={`border  border-black dark:border-white rounded-2xl p-2 transition-all ${
             hover ? "m-2" : "m-5"
           }`}
           onMouseEnter={() => allowInteraction && setHover(true)}
@@ -45,7 +45,7 @@ export function ProjectComponent(props: {
       ) : (
         <>
           <div
-            className="border border-white rounded-2xl p-2 opacity-0"
+            className="border  border-black dark:border-white rounded-2xl p-2 opacity-0"
             onClick={() => setClicked(true)}
           >
             <div className="relative aspect-square">
@@ -59,7 +59,7 @@ export function ProjectComponent(props: {
             <h3>{title}</h3>
           </div>
           <div
-            className="bg-black border border-white rounded-2xl p-2 absolute z-[100] translate-x-1/4 w-[66%]"
+            className="bg-gray-200 dark:bg-gray-900 border  border-black dark:border-white rounded-2xl p-2 absolute z-[100] translate-x-1/4 w-[66%]"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             onClick={() => setClicked(false)}
