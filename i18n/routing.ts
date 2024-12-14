@@ -17,3 +17,4 @@ export const {Link, redirect, usePathname, useRouter, getPathname} =
   createNavigation(routing);
 
 export type localeType = 'en' | 'pl';
+export const localeArray = ['en', 'pl'];
