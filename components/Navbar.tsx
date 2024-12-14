@@ -9,7 +9,7 @@ const Navbar = () => {
   const t = useTranslations("Components.Navbar");
   return (
     <>
-      <nav className="p-1 bg-black border-b border-white whitespace-nowrap fixed w-full">
+      <nav className="p-1 bg-black border-b border-white whitespace-nowrap fixed w-full z-[200]">
         <ul className="flex">
           <li className={"p-1 mx-1"}>
             <Link href="/">logo</Link>
