@@ -1,7 +1,7 @@
 {
   "MainPage": {
     "title": "Hello World from vFly",
-    "body": "vFly planes go vroom"
+    "subtitle": "vFly planes go vroom"
   },
   "JoinPage": {
     "title": "Join us",
@@ -20,7 +20,7 @@
       "home": "Home",
       "projects": "Projects",
       "contact": "Contact",
-      "join": "Join US!",
+      "join": "Join Us!",
       "lang": "En"
     }
   }
