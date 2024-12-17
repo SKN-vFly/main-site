@@ -4,8 +4,10 @@
     "subtitle": "vFly planes go vroom"
   },
   "JoinPage": {
-    "title": "Join us",
-    "body": "Join us and fly with us"
+    "joinHeader": "Meet out team",
+    "leaders": "Our team leaders:",
+    "sectLeads": "Leaders of sections:",
+    "join": "Join Us!"
   },
   "ContactPage": {
     "title": "Contact us",
