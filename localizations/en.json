@@ -15,25 +15,11 @@
       "twitterDescription": "vFly is a student organization that does many projects"
     }
   },
-  "JoinPage": {
+  "ContactPage": {
     "joinHeader": "Meet out team",
     "leaders": "Our team leaders:",
     "sectLeads": "Leaders of sections:",
     "join": "Join Us!",
-    "Meta": {
-      "title": "Join us",
-      "description": "Join us and fly with us",
-      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
-      "ogTitle": "Join us",
-      "ogDescription": "Join us and fly with us",
-      "category": "Student organization",
-      "twitterTitle": "Join us",
-      "twitterDescription": "Join us and fly with us"
-    }
-  },
-  "ContactPage": {
-    "title": "Contact us",
-    "body": "Contact us and fly with us",
     "Meta": {
       "title": "Contact us",
       "description": "Contact us and fly with us",
