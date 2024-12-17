@@ -81,7 +81,7 @@ export default async function RootLayout(
   const messages = await getMessages();
   return (
     <html lang={locale} className={`${robotoSans.className}`}>
-      <body>
+      <body className="min-h-[100vh]">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <ScrollToTop />

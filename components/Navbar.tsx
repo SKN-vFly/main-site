@@ -20,28 +20,28 @@ const Navbar = () => {
           <li className={"w-full"}></li>
           <li
             className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto"
+              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             }
           >
             <Link href="/">{t("home")}</Link>
           </li>
           <li
             className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto"
+              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             }
           >
             <Link href="/projects">{t("projects")}</Link>
           </li>
           <li
             className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto"
+              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             }
           >
             <Link href="/contact">{t("contact")}</Link>
           </li>
           <li
             className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto"
+              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             }
           >
             <Link href="/join-us">{t("join")}</Link>
