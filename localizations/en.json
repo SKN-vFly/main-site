@@ -16,8 +16,10 @@
     }
   },
   "JoinPage": {
-    "title": "Join us",
-    "body": "Join us and fly with us",
+    "joinHeader": "Meet out team",
+    "leaders": "Our team leaders:",
+    "sectLeads": "Leaders of sections:",
+    "join": "Join Us!",
     "Meta": {
       "title": "Join us",
       "description": "Join us and fly with us",
