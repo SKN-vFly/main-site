@@ -17,15 +17,45 @@
   },
   "JoinPage": {
     "title": "Join us",
-    "body": "Join us and fly with us"
+    "body": "Join us and fly with us",
+    "Meta": {
+      "title": "Join us",
+      "description": "Join us and fly with us",
+      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
+      "ogTitle": "Join us",
+      "ogDescription": "Join us and fly with us",
+      "category": "Student organization",
+      "twitterTitle": "Join us",
+      "twitterDescription": "Join us and fly with us"
+    }
   },
   "ContactPage": {
     "title": "Contact us",
-    "body": "Contact us and fly with us"
+    "body": "Contact us and fly with us",
+    "Meta": {
+      "title": "Contact us",
+      "description": "Contact us and fly with us",
+      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
+      "ogTitle": "Contact us",
+      "ogDescription": "Contact us and fly with us",
+      "category": "Student organization",
+      "twitterTitle": "Contact us",
+      "twitterDescription": "Contact us and fly with us"
+    }
   },
   "ProjectsPage": {
     "title": "Our Projects",
-    "body": "Our Projects"
+    "body": "Our Projects",
+    "Meta": {
+      "title": "Our Projects",
+      "description": "Our Projects",
+      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
+      "ogTitle": "Our Projects",
+      "ogDescription": "Our Projects",
+      "category": "Student organization",
+      "twitterTitle": "Our Projects",
+      "twitterDescription": "Our Projects"
+    }
   },
   "Components": {
     "Navbar": {
