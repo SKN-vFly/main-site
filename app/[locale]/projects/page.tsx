@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { localeArray } from "@/i18n/routing";
+// import { localeArray } from "@/i18n/routing";
 import { ProjectDisplay } from "@/components/ProjectDisplayWrapper";
 const projects = [
   {
@@ -83,11 +83,11 @@ export default function Projects() {
   );
 }
 
-export function generateStaticParams() {
-  // Generate static paths for all locales
-  const locales = localeArray;
-  const paths = locales.map((locale) => ({
-    params: { locale },
-  }));
-  return paths;
-}
+// export function generateStaticParams() {
+//   // Generate static paths for all locales
+//   const locales = localeArray;
+//   const paths = locales.map((locale) => ({
+//     params: { locale },
+//   }));
+//   return paths;
+// }

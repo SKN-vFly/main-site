@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { MediaHeader } from "@/components/MediaHeader";
-import { localeArray, Link } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 
 export default function Landing() {
   const t = useTranslations("MainPage");
@@ -48,11 +48,11 @@ export default function Landing() {
   );
 }
 
-export function generateStaticParams() {
-  // Generate static paths for all locales
-  const locales = localeArray;
-  const paths = locales.map((locale) => ({
-    params: { locale },
-  }));
-  return paths;
-}
+// export function generateStaticParams() {
+//   // Generate static paths for all locales
+//   const locales = localeArray;
+//   const paths = locales.map((locale) => ({
+//     params: { locale },
+//   }));
+//   return paths;
+// }

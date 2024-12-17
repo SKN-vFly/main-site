@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: localeType };
+  params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "MainPage.Meta" });
@@ -32,7 +32,7 @@ export async function generateMetadata({
 export default async function Layout(
   props: Readonly<{
     children: React.ReactNode;
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
   }>
 ) {
   const params = await props.params;
