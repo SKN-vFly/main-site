@@ -18,7 +18,7 @@ const robotoSans = Roboto({
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: localeType };
+  params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "MainPage.Meta" });
@@ -63,7 +63,7 @@ export const viewport: Viewport = {
 export default async function RootLayout(
   props: Readonly<{
     children: React.ReactNode;
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
   }>
 ) {
   const params = await props.params;
