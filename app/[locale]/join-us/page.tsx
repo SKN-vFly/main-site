@@ -11,7 +11,7 @@ export default function Join() {
         <div className="w-full aspect-[3/4] border border-black dark:border-white rounded-3xl text-center">
           huh
         </div>
-        <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
+        <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center *:">
           huh2
         </div>
       </div>

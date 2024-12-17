@@ -14,7 +14,8 @@ export default function Landing() {
         </div>
         <div className="flex my-20">
           <Link
-            href="/join-us"
+            href="https://discord.gg/57huavgd"
+            target="_blank"
             className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
           >
             {t("join")}
@@ -37,8 +38,9 @@ export default function Landing() {
         </div>
         <div className="flex my-5">
           <Link
-            href="/join-us"
             className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
+            href="https://discord.gg/57huavgd"
+            target="_blank"
           >
             {t("join")}
           </Link>
