@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { localeArray, Link } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 
 export default function Join() {
   const t = useTranslations("JoinPage");
@@ -44,11 +44,11 @@ export default function Join() {
   );
 }
 
-export function generateStaticParams() {
-  // Generate static paths for all locales
-  const locales = localeArray;
-  const paths = locales.map((locale) => ({
-    params: { locale },
-  }));
-  return paths;
-}
+// export function generateStaticParams() {
+//   // Generate static paths for all locales
+//   const locales = localeArray;
+//   const paths = locales.map((locale) => ({
+//     params: { locale },
+//   }));
+//   return paths;
+// }

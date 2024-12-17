@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { localeArray } from "@/i18n/routing";
+// import { localeArray } from "@/i18n/routing";
 
 export default function Contact() {
   const t = useTranslations("Contact");
@@ -11,11 +11,11 @@ export default function Contact() {
   );
 }
 
-export function generateStaticParams() {
-  // Generate static paths for all locales
-  const locales = localeArray;
-  const paths = locales.map((locale) => ({
-    params: { locale },
-  }));
-  return paths;
-}
+// export function generateStaticParams() {
+//   // Generate static paths for all locales
+//   const locales = localeArray;
+//   const paths = locales.map((locale) => ({
+//     params: { locale },
+//   }));
+//   return paths;
+// }
