@@ -9,11 +9,15 @@ export async function generateMetadata({
   params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "MainPage.Meta" });
+  const t = await getTranslations({ locale, namespace: "ProjectsPage.Meta" });
 
   return {
     title: t("title"),
     description: t("description"),
+    robots: {
+      follow: true,
+      index: true,
+    },
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
@@ -21,6 +25,10 @@ export async function generateMetadata({
       locale: locale,
       url: `${locale}/`,
     },
+    // Dopisac sie do autorow
+    authors: [{ name: "Libi Rajzer", url: "https://rajzer.dev" }],
+    keywords: t("keywords"),
+    category: t("category"),
     twitter: {
       title: t("twitterTitle"),
       description: t("twitterDescription"),
