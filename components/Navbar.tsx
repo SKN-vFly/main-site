@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const t = useTranslations("Components.Navbar");
@@ -11,8 +12,15 @@ const Navbar = () => {
     <>
       <nav className="p-1 bg-white dark:bg-black border-b border-black dark:border-white whitespace-nowrap fixed w-full z-[200]">
         <ul className="flex">
-          <li className={"p-1 mx-1"}>
-            <Link href="/">logo</Link>
+          <li className="p-1 mx-1 aspect-square w-9 h-9">
+            <Link href="/" className="w-full h-full relative block">
+              <Image
+                src="/Logo10003.svg"
+                alt="Logo vFly"
+                fill={true}
+                className="object-cover aspect-square w-9 h-9"
+              />
+            </Link>
           </li>
           <li className="mx-1">
             <LangSwitcher />
