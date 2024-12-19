@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { PersonalCard } from "@/components/PersonalCard";
 // import { localeArray } from "@/i18n/routing";
 
 export default function Contact() {
@@ -10,26 +11,56 @@ export default function Contact() {
       <h2 className="text-3xl text-center">{t("leaders")}</h2>
       <div className="grid gap-5 grid-cols-2 w-2/3 mx-auto my-10">
         <div className="w-full aspect-[3/4] border border-black dark:border-white rounded-3xl text-center">
-          huh
+          <PersonalCard
+            name="Piotr Bartosz"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("chairman")}
+          />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
-          huh2
+          <PersonalCard
+            name="Dariusz Myszor"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("supervisor")}
+          />
         </div>
       </div>
       <h2 className="text-3xl text-center">{t("sectLeads")}</h2>
 
       <div className="grid gap-5 grid-cols-4 w-full my-10">
         <div className="w-full aspect-[3/4] border border-black dark:border-white rounded-3xl text-center">
-          huh
+          <PersonalCard
+            name="Piotr Bartosz"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("sectLead")}
+          />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
-          huh2
+          <PersonalCard
+            name="Piotr Bartosz"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("sectLead")}
+          />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
-          huh3
+          <PersonalCard
+            name="Piotr Bartosz"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("sectLead")}
+          />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
-          huh4
+          <PersonalCard
+            name="Piotr Bartosz"
+            email="a@gmail.com"
+            imageSrc="/placeholder.jpg"
+            role={t("sectLead")}
+          />
         </div>
       </div>
 
