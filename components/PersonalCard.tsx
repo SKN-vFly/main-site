@@ -15,7 +15,7 @@ export function PersonalCard(params: {
 
   return (
     <div
-      className="w-full h-full relative transition-all"
+      className="w-full h-full relative transition-all overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
