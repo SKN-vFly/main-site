@@ -21,13 +21,15 @@ export function PersonalCard(params: {
     >
       <div
         className={`z-[999] absolute bottom-3 left-1/2 -translate-x-1/2 ${
-          isHovered ? "opacity-100" : "opacity-0"
+          isHovered ? "opacity-100 " : "opacity-0"
         }`}
+        aria-hidden={isHovered}
       >
         <h2 className="text-2xl">{name}</h2>
-        <h3>{role}</h3>
+        <h3 className=" text-lg">{role}</h3>
         <h3 className="text-xl">
-          {t("email")} {email}
+          {t("email")}
+          <a href={`mailto:${email}`}>{email} </a>
         </h3>
       </div>
       <Image
@@ -38,6 +40,9 @@ export function PersonalCard(params: {
           isHovered ? "blur-md" : ""
         }`}
       />
+      {isHovered && (
+        <div className="w-full h-full bg-white dark:bg-black !bg-opacity-50  absolute z-[200] border-0 rounded-3xl"></div>
+      )}
     </div>
   );
 }
