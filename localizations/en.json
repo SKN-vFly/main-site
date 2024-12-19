@@ -20,6 +20,9 @@
     "leaders": "Our team leaders:",
     "sectLeads": "Leaders of sections:",
     "join": "Join Us!",
+    "chairman": "Chairman",
+    "supervisor": "Supervisor",
+    "sectLead": "Section Leader",
     "Meta": {
       "title": "Contact us",
       "description": "Contact us and fly with us",
@@ -58,6 +61,10 @@
       "projects": "Projects",
       "contact": "Contact",
       "join": "Join Us!"
+    },
+    "PersonalCard": {
+      "email": "Email:",
+      "imageAlt": "Image of"
     }
   }
 }
