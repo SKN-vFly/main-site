@@ -1,7 +1,19 @@
 {
   "MainPage": {
     "title": "Witaj Świecie z vFly",
-    "subtitle": "Samoloty vFly lecą ziuuuum"
+    "subtitle": "Samoloty vFly lecą ziuuuum",
+    "join": "Dołącz do nas",
+    "3rdtitle": "vFly jest najlepszy",
+    "Meta": {
+      "title": "SKN vFly",
+      "description": "SKN vFly to organizacja studencka, która realizuje wiele projektów",
+      "keywords": "vFly, wirtualny, symulatory, samoloty, latać, elektroniczny, badania",
+      "ogTitle": "SKN vFly",
+      "ogDescription": "vFly to organizacja studencka, która realizuje wiele projektów",
+      "category": "Organizacja studencka",
+      "twitterTitle": "SKN vFly",
+      "twitterDescription": "vFly to organizacja studencka, która realizuje wiele projektów"
+    }
   },
   "JoinPage": {
     "title": "Dołącz do nas",
@@ -9,11 +21,42 @@
   },
   "ContactPage": {
     "title": "Skontaktuj się z nami",
-    "body": "Skontaktuj się z nami i leć z nami"
+    "body": "Skontaktuj się z nami i leć z nami",
+    "joinHeader": "Poznaj nasz zespół",
+    "leaders": "Nasi liderzy zespołu:",
+    "sectLeads": "Liderzy sekcji:",
+    "join": "Dołącz do nas!",
+    "chairman": "Przewodniczący",
+    "supervisor": "Opiekun",
+    "sectLead": "Lider sekcji",
+    "infraLead": "Koordynator ds. Infrastruktury i Zasobów",
+    "promoLead": "Koordynator ds. Współpracy i Promocji",
+    "adminLead": "Koordynator ds. Organizacji i Administracji",
+    "projeLead": "Koordynator ds. Projektów i Członków",
+    "Meta": {
+      "title": "Skontaktuj się z nami",
+      "description": "Skontaktuj się z nami i leć z nami",
+      "keywords": "vFly, wirtualny, symulatory, samoloty, latać, elektroniczny, badania",
+      "ogTitle": "Skontaktuj się z nami",
+      "ogDescription": "Skontaktuj się z nami i leć z nami",
+      "category": "Organizacja studencka",
+      "twitterTitle": "Skontaktuj się z nami",
+      "twitterDescription": "Skontaktuj się z nami i leć z nami"
+    }
   },
   "ProjectsPage": {
     "title": "Nasze Projekty",
-    "body": "Nasze Projekty które lecą ziuuum"
+    "body": "Nasze Projekty które lecą ziuuum",
+    "Meta": {
+      "title": "Nasze Projekty",
+      "description": "Nasze Projekty",
+      "keywords": "vFly, wirtualny, symulatory, samoloty, latać, elektroniczny, badania",
+      "ogTitle": "Nasze Projekty",
+      "ogDescription": "Nasze Projekty",
+      "category": "Organizacja studencka",
+      "twitterTitle": "Nasze Projekty",
+      "twitterDescription": "Nasze Projekty"
+    }
   },
   "Components": {
     "Navbar": {
@@ -22,6 +65,16 @@
       "contact": "Kontakt",
       "join": "Dołącz",
       "lang": "Pl"
+    },
+    "Footer": {
+      "home": "O nas",
+      "projects": "Projekt",
+      "contact": "Kontakt",
+      "join": "Dołącz"
+    },
+    "PersonalCard": {
+      "email": "Email:",
+      "imageAlt": "Obraz"
     }
   }
 }

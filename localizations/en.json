@@ -23,6 +23,10 @@
     "chairman": "Chairman",
     "supervisor": "Supervisor",
     "sectLead": "Section Leader",
+    "infraLead": "Infrastructure and Resources Coordinator",
+    "promoLead": "Cooperation and Promotion Coordinator",
+    "adminLead": "Organization and Administration Coordinator",
+    "projeLead": "Projects and Members Coordinator",
     "Meta": {
       "title": "Contact us",
       "description": "Contact us and fly with us",

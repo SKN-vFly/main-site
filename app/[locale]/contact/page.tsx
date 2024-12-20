@@ -12,16 +12,16 @@ export default function Contact() {
       <div className="grid gap-5 grid-cols-2 w-2/3 mx-auto my-10">
         <div className="w-full aspect-[3/4] border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Piotr Bartosz"
-            email="a@gmail.com"
+            name="mgr inż. Piotr Bartosz"
+            email="piotbar578@student.polsl.pl"
             imageSrc="/placeholder.jpg"
             role={t("chairman")}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Dariusz Myszor"
-            email="a@gmail.com"
+            name="dr inż. Dariusz Myszor"
+            email="dariusz.myszor@polsl.pl"
             imageSrc="/placeholder.jpg"
             role={t("supervisor")}
           />
@@ -32,34 +32,34 @@ export default function Contact() {
       <div className="grid gap-5 grid-cols-4 w-full my-10">
         <div className="w-full aspect-[3/4] border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Piotr Bartosz"
-            email="a@gmail.com"
+            name="Jakub Wieczorek"
+            email="jw306100@student.polsl.pl"
             imageSrc="/placeholder.jpg"
-            role={t("sectLead")}
+            role={t("infraLead")}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Piotr Bartosz"
-            email="a@gmail.com"
+            name="Natalia Koim"
+            email="natakoi272@student.polsl.pl"
             imageSrc="/placeholder.jpg"
-            role={t("sectLead")}
+            role={t("promoLead")}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Piotr Bartosz"
-            email="a@gmail.com"
+            name="Michał Czyż"
+            email="mc305963@student.polsl.pl"
             imageSrc="/placeholder.jpg"
-            role={t("sectLead")}
+            role={t("adminLead")}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
           <PersonalCard
-            name="Piotr Bartosz"
-            email="a@gmail.com"
+            name="Maria Ochman"
+            email="mo306378@student.polsl.pl"
             imageSrc="/placeholder.jpg"
-            role={t("sectLead")}
+            role={t("projeLead")}
           />
         </div>
       </div>
