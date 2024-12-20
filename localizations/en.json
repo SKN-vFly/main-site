@@ -80,5 +80,11 @@
       "email": "Email:",
       "imageAlt": "Image of"
     }
+  },
+  "Projects": {
+    "NotFound": {
+      "title": "This project isn't here",
+      "body": "Maybe You were looking for a cat instead?"
+    }
   }
 }
