@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 // import { localeArray } from "@/i18n/routing";
-import { ProjectDisplay } from "@/components/ProjectDisplayWrapper";
+import { ProjectComponent } from "@/components/ProjectComponent";
 const projects = [
   {
     title: "Project 1",
@@ -78,7 +78,17 @@ export default function Projects() {
       <div className="my-3">
         <h1 className="text-3xl text-center">{t("title")}</h1>
       </div>
-      <ProjectDisplay projects={projects} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {projects.map((project) => (
+          <ProjectComponent
+            key={project.title}
+            title={project.title}
+            description={project.description}
+            imgSrc={project.imgSrc}
+            link={project.link}
+          />
+        ))}
+      </div>
     </>
   );
 }

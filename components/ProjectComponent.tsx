@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState, useContext } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ProjectClickedContext } from "./ProjectDisplayWrapper";
 
 export function ProjectComponent(props: {
   title: string;
@@ -11,73 +10,40 @@ export function ProjectComponent(props: {
   link: string;
 }) {
   const [hover, setHover] = useState(false);
-  const [clicked, setClicked] = useState(false);
   const { title, description, imgSrc, link } = props;
-  const { allowInteraction, setAllowInteraction } = useContext(
-    ProjectClickedContext
-  );
 
-  useEffect(() => {
-    setAllowInteraction(!clicked);
-  }, [clicked, setAllowInteraction]);
-  console.log("allowInteraction", allowInteraction);
   return (
-    <>
-      {!clicked ? (
+    <Link
+      href={link}
+      className={`border  border-black dark:border-white rounded-2xl p-2 pb-14 transition-all overflow-hidden ${
+        hover ? "m-2" : "m-5"
+      }`}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div className="relative aspect-square">
+        <Image
+          src={imgSrc}
+          alt={title}
+          fill={true}
+          className={`rounded-2xl mt-12 ${hover ? "blur-md" : ""}`}
+        />
         <div
-          className={`border  border-black dark:border-white rounded-2xl p-2 transition-all ${
-            hover ? "m-2" : "m-5"
-          }`}
-          onMouseEnter={() => allowInteraction && setHover(true)}
-          onMouseLeave={() => allowInteraction && setHover(false)}
-          onClick={() => allowInteraction && setClicked(true)}
+          className="z-[999] absolute top-1 left-1/2 -translate-x-1/2 text-center transition-all duration-300"
+          aria-hidden={hover}
         >
-          <div className="relative aspect-square">
-            <Image
-              src={imgSrc}
-              alt={title}
-              fill={true}
-              className="rounded-t-2xl"
-            />
-          </div>
-          <h3 className="font-bold text-center">{title}</h3>
+          <h2 className="text-2xl">{title}</h2>
+          <p
+            className={`text-lg ${hover ? "opacity-100" : "opacity-0"}`}
+            aria-hidden={hover}
+          >
+            {description}
+          </p>
         </div>
-      ) : (
-        <>
-          <div
-            className="border  border-black dark:border-white rounded-2xl p-2 opacity-0"
-            onClick={() => setClicked(true)}
-          >
-            <div className="relative aspect-square">
-              <Image
-                src={imgSrc}
-                alt={title}
-                fill={true}
-                className="rounded-t-2xl"
-              />
-            </div>
-            <h3>{title}</h3>
-          </div>
-          <div
-            className="bg-gray-200 dark:bg-gray-900 border  border-black dark:border-white rounded-2xl p-2 absolute z-[100] translate-x-1/4 w-[66%]"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-            onClick={() => setClicked(false)}
-          >
-            <h3 className="">{title}</h3>
-            <div className="relative aspect-square ">
-              <Image
-                src={imgSrc}
-                alt={title}
-                fill={true}
-                className="rounded-t-2xl "
-              />
-            </div>
-            <p className="">{description}</p>
-            <Link href={link}>Learn more</Link>
-          </div>
-        </>
-      )}
-    </>
+        {hover && (
+          <div className="absolute -top-10 -left-10 w-[120%] h-[120%]  bg-white dark:bg-black !bg-opacity-50 z-[200] border-0 rounded-2xl"></div>
+        )}
+      </div>
+    </Link>
   );
 }
