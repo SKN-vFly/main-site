@@ -48,6 +48,20 @@
       "twitterDescription": "Our Projects"
     }
   },
+  "NotFound": {
+    "title": "404",
+    "body": "Page not found, have a cat to cheer you up instead",
+    "Meta": {
+      "title": "404",
+      "description": "Page not found",
+      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
+      "ogTitle": "404",
+      "ogDescription": "Page not found",
+      "category": "Student organization",
+      "twitterTitle": "404",
+      "twitterDescription": "Page not found"
+    }
+  },
   "Components": {
     "Navbar": {
       "home": "Home",
