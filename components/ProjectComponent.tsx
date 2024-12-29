@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export function ProjectComponent(props: {
   title: string;
@@ -29,10 +29,10 @@ export function ProjectComponent(props: {
           className={`rounded-2xl mt-12 ${hover ? "blur-md" : ""}`}
         />
         <div
-          className="z-[999] absolute top-1 left-1/2 -translate-x-1/2 text-center transition-all duration-300"
+          className="z-[999] absolute top-1 left-1/2 -translate-x-1/2 text-center transition-all duration-300 w-full"
           aria-hidden={hover}
         >
-          <h2 className="text-2xl">{title}</h2>
+          <h2 className="text-2xl w-full">{title}</h2>
           <p
             className={`text-lg ${hover ? "opacity-100" : "opacity-0"}`}
             aria-hidden={hover}

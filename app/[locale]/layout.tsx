@@ -81,13 +81,16 @@ export default async function RootLayout(
   const messages = await getMessages();
   return (
     <html lang={locale} className={`${robotoSans.className}`}>
-      <body className="min-h-[100vh]">
+      <body className="min-h-[100vh] ">
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <ScrollToTop />
-          <main className="px-4 lg:w-[66%] lg:px-0 mx-auto">{children}</main>
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            {/* Yucky calc, should refactor to be better */}
+            <Navbar />
+            <ScrollToTop />
+            <main className="px-4 lg:w-[66%] lg:px-0 mx-auto">{children}</main>
+          </div>
+          <Footer />
         </NextIntlClientProvider>
-        <Footer />
       </body>
     </html>
   );

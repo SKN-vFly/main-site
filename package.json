@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "main-site": "file:",
     "next": "15.1.0",
     "next-intl": "^3.26.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "remark-rehype": "^11.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
