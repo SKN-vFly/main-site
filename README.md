@@ -64,6 +64,29 @@ Po skończonej robocie wejść na GitHub i ze swojego brancha zrobić pull reque
 - TypeScript
 - Tailwind > style w CSS
 
+### Dodawanie projektów
+
+Żeby dodać projekt należy dodać brancha project/nazwa. Następnie trzeba dodać do folderów /projects/en i /projects/pl pliki [Markdown](https://github.com/lifeparticle/Markdown-Cheatsheet) (polecam się zapoznać). Wewnątrz są dwie ważne sekcje, opisze na podstawie tego co było użyte w trakcie developmentu:
+
+```markdown
+---
+title: 'Budowa Stacji Relaksu - The chair'
+imgSrc: '/placeholder.jpg'
+description: 'Stacja Relaksu coś tam coś tam'
+keywords: 'vFly, PC, Relax, Gaming setup, simulator'
+category: 'Project'
+---
+## Stacja Relaksu
+
+Coś tam stacja relaksu
+```
+
+Pomiędzy --- są umieszczone elememty których bezpośrednio nie widać w widoku projektu. Jest to miejsce na dodanie takich informacji jak tytuł czy główne zdjęcie (do listy projektów) oraz rzeczy do SEO.
+
+W drugiej sekcji jest już markdown który zostanie sparsowany przez transpilator i wyświetlony w formie HTML.
+
+W ramach bycia międzynarodowymi czy coś strona jest tak zaprojektowana żeby projekty były w kilku językach. Wersja polska w /projects/pl/ a angielska w /projects/en/.
+
 ## Dokumentacja do bibliotek
 
 - [next-intl](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing)
