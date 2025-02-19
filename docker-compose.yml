@@ -2,7 +2,8 @@ version: "3.9"
 
 services:
   nextapp:
-    container_name: nextapp
+    container_name: main-site
+    restart: unless-stopped
     image: nextapp
     build: .
     ports:
