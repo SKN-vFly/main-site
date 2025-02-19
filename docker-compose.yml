@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  nextapp:
+  site:
     container_name: main-site
     restart: unless-stopped
     image: nextapp
