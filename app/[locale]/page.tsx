@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { MediaHeader } from "@/components/MediaHeader";
-import { Link } from "@/i18n/routing";
 
 export default function Landing() {
   const t = useTranslations("MainPage");
@@ -13,13 +12,14 @@ export default function Landing() {
           <h2>{t("subtitle")}</h2>
         </div>
         <div className="flex my-20">
-          <Link
+          <a
             href="https://discord.gg/57huavgd"
             target="_blank"
+            rel="noopener noreferrer"
             className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
           >
             {t("join")}
-          </Link>
+          </a>
         </div>
       </div>
       <div className="w-full pb-10">
@@ -37,13 +37,14 @@ export default function Landing() {
           </div>
         </div>
         <div className="flex my-5">
-          <Link
+          <a
             className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             href="https://discord.gg/57huavgd"
             target="_blank"
+            rel="noopener noreferrer"
           >
             {t("join")}
-          </Link>
+          </a>
         </div>
       </div>
     </div>

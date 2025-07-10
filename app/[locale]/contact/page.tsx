@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { PersonalCard } from "@/components/PersonalCard";
 // import { localeArray } from "@/i18n/routing";
 
@@ -65,13 +64,14 @@ export default function Contact() {
       </div>
 
       <div className="my-10 flex">
-        <Link
+        <a
           className="px-5 py-2 border border-black dark:border-white text-xl mx-auto rounded-xl"
           href="https://discord.gg/57huavgd"
           target="_blank"
+          rel="noopener noreferrer"
         >
           {t("join")}
-        </Link>
+        </a>
       </div>
     </div>
   );

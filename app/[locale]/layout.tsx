@@ -86,8 +86,8 @@ export default async function RootLayout(
           <Navbar />
           <ScrollToTop />
           <main className="px-4 lg:w-[66%] lg:px-0 mx-auto">{children}</main>
+          <Footer />
         </NextIntlClientProvider>
-        <Footer />
       </body>
     </html>
   );

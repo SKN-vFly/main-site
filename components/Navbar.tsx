@@ -52,9 +52,13 @@ const Navbar = () => {
               "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
             }
           >
-            <Link href="https://discord.gg/57huavgd" target="_blank">
+            <a
+              href="https://discord.gg/57huavgd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t("join")}
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
