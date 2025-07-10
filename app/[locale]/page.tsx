@@ -1,52 +1,136 @@
 import { useTranslations } from "next-intl";
 import { MediaHeader } from "@/components/MediaHeader";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Landing() {
   const t = useTranslations("MainPage");
   return (
     <div className="w-full">
-      <div className="w-full h-[96vh]">
-        {/* Niech ktos obliczy ile wysokosci zeby bylo do spodu strony a nie nizej */}
+      {/* Hero Section */}
+      <section className="min-h-[90vh] flex flex-col items-center justify-center text-center space-y-8 px-4">
         <MediaHeader text={t("title")} />
-        <div className="p-4 mx-auto w-[60%]">
-          <h2>{t("subtitle")}</h2>
-        </div>
-        <div className="flex my-20">
-          <a
-            href="https://discord.gg/57huavgd"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-          >
-            {t("join")}
-          </a>
-        </div>
-      </div>
-      <div className="w-full pb-10">
-        <div className="text-black dark:text-white p-4 min-w-1/2 flex flex-col items-center justify-center mx-auto my-5 rounded-3xl">
-          <h2 className="text-2xl border border-black dark:border-white px-10 py-2 rounded-2xl">
-            {t("3rdtitle")}
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
+            {t("subtitle")}
           </h2>
+          <Button size="lg" asChild>
+            <a
+              href="https://discord.gg/57huavgd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("join")}
+            </a>
+          </Button>
         </div>
-        <div className="grid grid-cols-2 gap-5">
-          <div className="w-full aspect-square border border-black dark:border-white rounded-3xl p-5">
-            idkkk co tu ma bycccc
+      </section>
+
+      {/* About Section */}
+      <section className="container mx-auto px-4 py-16 space-y-12">
+        <div className="text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold">{t("whoWeAre")}</h2>
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <p>{t("aboutDescription1")}</p>
+            <p>{t("aboutDescription2")}</p>
+            <p>{t("aboutDescription3")}</p>
           </div>
-          <div className="w-full aspect-square border border-black dark:border-white rounded-3xl p-5">
-            ani tuuuuu
-          </div>
         </div>
-        <div className="flex my-5">
-          <a
-            className="p-2 border border-black dark:border-white rounded-2xl mx-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-            href="https://discord.gg/57huavgd"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("join")}
-          </a>
+      </section>
+
+      {/* Three Pillars Section */}
+      <section className="container mx-auto px-4 py-16 space-y-12">
+        <div className="text-center space-y-4">
+          <Badge variant="outline" className="text-lg px-6 py-2">
+            {t("threePillars")}
+          </Badge>
+          <h3 className="text-3xl md:text-4xl font-bold">
+            {t("ourFoundation")}
+          </h3>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t("pillarsDescription")}
+          </p>
         </div>
-      </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <span>�</span>
+                <span>{t("research")}</span>
+              </CardTitle>
+              <CardDescription>{t("researchSubtitle")}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("researchDescription")}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <span>🚀</span>
+                <span>{t("development")}</span>
+              </CardTitle>
+              <CardDescription>{t("developmentSubtitle")}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("developmentDescription")}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <span>🎉</span>
+                <span>{t("entertainment")}</span>
+              </CardTitle>
+              <CardDescription>{t("entertainmentSubtitle")}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {t("entertainmentDescription")}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="container mx-auto px-4 py-16">
+        <Card className="max-w-3xl mx-auto border-2 border-primary/20 shadow-xl">
+          <CardHeader className="text-center space-y-4">
+            <CardTitle className="text-2xl md:text-3xl">
+              {t("startProject")}
+            </CardTitle>
+            <CardDescription className="text-lg">
+              {t("contactUs")}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center pb-8">
+            <Button size="lg" className="text-lg px-8 py-3" asChild>
+              <a
+                href="https://discord.gg/57huavgd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("join")}
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </section>
     </div>
   );
 }

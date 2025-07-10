@@ -2,116 +2,134 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Globe } from "lucide-react";
+import { ThemeSwitcher } from "./theme-switcher";
 
 const Navbar = () => {
   const t = useTranslations("Components.Navbar");
   return (
     <>
-      <nav className="p-1 bg-white dark:bg-black border-b border-black dark:border-white whitespace-nowrap fixed w-full z-[200]">
-        <ul className="flex">
-          <li className="p-1 mx-1 aspect-square w-9 h-9">
-            <Link href="/" className="w-full h-full relative block">
-              <Image
-                src="/Logo10003.svg"
-                alt="Logo vFly"
-                fill={true}
-                className="object-cover aspect-square w-9 h-9"
-              />
+      <nav className="p-4 border-b border-border backdrop-blur-sm bg-background/80 fixed w-full z-50 top-0">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 relative">
+                <Image
+                  src="/Logo10003.svg"
+                  alt="Logo vFly"
+                  fill={true}
+                  className="object-contain"
+                />
+              </div>
+              <span className="font-bold text-lg">vFly</span>
             </Link>
-          </li>
-          <li className="mx-1">
+          </div>
+
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    {t("home")}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/projects"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    {t("projects")}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/contact"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    {t("contact")}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          <div className="flex items-center space-x-4">
+            <ThemeSwitcher />
             <LangSwitcher />
-          </li>
-          <li className={"w-full"}></li>
-          <li
-            className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-            }
-          >
-            <Link href="/">{t("home")}</Link>
-          </li>
-          <li
-            className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-            }
-          >
-            <Link href="/projects">{t("projects")}</Link>
-          </li>
-          <li
-            className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-            }
-          >
-            <Link href="/contact">{t("contact")}</Link>
-          </li>
-          <li
-            className={
-              "border border-black dark:border-white p-1 mx-1 text-center rounded-lg my-auto hover:bg-slate-400 hover:dark:bg-slate-600 transition-colors duration-300"
-            }
-          >
-            <a
-              href="https://discord.gg/57huavgd"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("join")}
-            </a>
-          </li>
-        </ul>
+            <Button asChild>
+              <a
+                href="https://discord.gg/57huavgd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("join")}
+              </a>
+            </Button>
+          </div>
+        </div>
       </nav>
-      <div className="p-2">.</div>
-      {/* Hidden text to make floating navbar align nicely */}
+      <div className="h-16">{/* Spacer for fixed navbar */}</div>
     </>
   );
 };
 
 function LangSwitcher() {
   const t = useTranslations("Components.Navbar");
-  // On hover, show the other languages
-  const [showLangsClicked, setShowLangsClicked] = useState(false);
-  const [showLangsHovered, setShowLangsHovered] = useState(false);
   const url = usePathname();
-  console.log(`/${url.split("/").slice(2).join("/")}`);
+
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setShowLangsHovered(true)}
-      onMouseLeave={() => setShowLangsHovered(false)}
-    >
-      <button
-        className={`border border-black dark:border-white p-1 text-center ${
-          showLangsClicked || showLangsHovered
-            ? "rounded-t-lg rounded-b-0"
-            : "rounded-lg"
-        }`}
-        onClick={() => setShowLangsClicked(!showLangsClicked)}
-      >
-        {t("lang")}
-      </button>
-      <div
-        className={`absolute top-8 -translate-x-1/3 bg-white dark:bg-black border border-black dark:border-white rounded-md p-2 flex flex-col  ${
-          showLangsClicked || showLangsHovered ? "" : "hidden"
-        }`}
-      >
-        <Link
-          href={`/${url.split("/").slice(2).join("/")}`}
-          locale="en"
-          className="p-1 m-1 border  border-black dark:border-white rounded-sm"
-        >
-          English
-        </Link>
-        <Link
-          href={`/${url.split("/").slice(2).join("/")}`}
-          locale="pl"
-          className="p-1 m-1 border  border-black dark:border-white rounded-sm"
-        >
-          Polski
-        </Link>
-      </div>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="sm">
+          <Globe className="h-4 w-4 mr-2" />
+          {t("lang")}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem asChild>
+          <Link
+            href={`/${url.split("/").slice(2).join("/")}`}
+            locale="en"
+            className="flex items-center space-x-2"
+          >
+            <span className="text-lg">🇺🇸</span>
+            <span>English</span>
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link
+            href={`/${url.split("/").slice(2).join("/")}`}
+            locale="pl"
+            className="flex items-center space-x-2"
+          >
+            <span className="text-lg">🇵🇱</span>
+            <span>Polski</span>
+          </Link>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 

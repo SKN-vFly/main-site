@@ -74,12 +74,27 @@ export default function Projects() {
   const t = useTranslations("ProjectsPage");
 
   return (
-    <>
-      <div className="my-3">
-        <h1 className="text-3xl text-center">{t("title")}</h1>
+    <div className="container mx-auto px-4 py-12 space-y-16">
+      {/* Hero Section */}
+      <div className="text-center space-y-6">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          {t("title")}
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Odkryj nasze innowacyjne projekty i rozwiązania w dziedzinie lotnictwa
+        </p>
       </div>
-      <ProjectDisplay projects={projects} />
-    </>
+
+      {/* Projects Grid */}
+      <div className="space-y-8">
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground">
+            Kliknij na projekt, aby dowiedzieć się więcej
+          </p>
+        </div>
+        <ProjectDisplay projects={projects} />
+      </div>
+    </div>
   );
 }
 

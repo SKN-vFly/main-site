@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowUp } from "lucide-react";
 
-// TODO: Add an animation to the scroll to top button
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -31,28 +32,15 @@ export function ScrollToTop() {
   }, []);
 
   return (
-    <div
-      className={`fixed right-5 bottom-5 ${
-        isVisible ? "border border-white rounded-md p-2" : ""
-      }`}
-    >
+    <div className="fixed right-5 bottom-5 z-50">
       {isVisible && (
-        <div onClick={scrollToTop} className=" cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 15l7-7 7 7"
-            />
-          </svg>
-        </div>
+        <Button
+          onClick={scrollToTop}
+          size="icon"
+          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+        >
+          <ArrowUp className="h-4 w-4" />
+        </Button>
       )}
     </div>
   );

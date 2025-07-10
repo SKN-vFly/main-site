@@ -1,9 +1,27 @@
 {
   "MainPage": {
     "title": "Hello World from vFly",
-    "subtitle": "vFly planes go vroom",
+    "subtitle": "Student Science Club of Virtual Flight vFly",
     "join": "Join us",
     "3rdtitle": "vFly is the best",
+    "whoWeAre": "Who Are We?",
+    "aboutDescription1": "We are a community of enthusiasts, scientists, engineers, united under a common banner and goal of overcoming the limits of what is possible.",
+    "aboutDescription2": "Our club was founded in 2014 at the Faculty of Automatic Control, Electronics and Computer Science with a mission to maintain and develop flight simulators available at the faculty. Where initially we were a small group of computer science and automation students, we now constitute one of the largest clubs at the Silesian University of Technology, bringing together people from across the university, from high school students through students to scientists.",
+    "aboutDescription3": "As a result of such development, the scope of the club's activities has been significantly expanded, covering most of the fields available at the Silesian University of Technology, but we still have not abandoned our original mission and are strongly active in the field of flight simulators.",
+    "threePillars": "Three Pillars",
+    "ourFoundation": "Our Foundation",
+    "pillarsDescription": "We base our activities on three pillars: RESEARCH, DEVELOPMENT, ENTERTAINMENT.",
+    "research": "Research",
+    "researchSubtitle": "Scientific Excellence",
+    "researchDescription": "Scientific activity is very important to us and constitutes a very important element of our community. We work so that as many of our achievements as possible contribute to the development of human knowledge. We conduct research in many fields and at various levels of advancement and importance. From flight simulations through computer algorithms to biotechnology, our members act ambitiously to push humanity forward wherever they see such an opportunity.",
+    "development": "Development",
+    "developmentSubtitle": "Personal Growth",
+    "developmentDescription": "With a large library of research, experts and experiences, our members have broad opportunities to develop their knowledge and skills. These opportunities are used not only by students starting their careers, but also by experienced scientists trying to broaden their horizons. Club projects constitute valuable experience for many members, which is invaluable when getting their first job or choosing their life path.",
+    "entertainment": "Entertainment",
+    "entertainmentSubtitle": "Fun and Relaxation",
+    "entertainmentDescription": "Despite extensive activities and strong involvement in scientific research and various projects, it should be remembered that we are all still human beings. This means that there are also needs to break away from work or research and relax. This is important not only for the physical but also mental health of our members, which is why entertainment is one of the main pillars of our club.",
+    "startProject": "Want to start a project?",
+    "contactUs": "Have questions? Contact us!",
     "Meta": {
       "title": "SKN vFly",
       "description": "SKN vFly is a student organization that does many projects",
@@ -16,13 +34,17 @@
     }
   },
   "ContactPage": {
-    "joinHeader": "Meet out team",
+    "joinHeader": "Meet our team",
     "leaders": "Our team leaders:",
-    "sectLeads": "Leaders of sections:",
+    "sectLeads": "Section coordinators:",
     "join": "Join Us!",
     "chairman": "Chairman",
     "supervisor": "Supervisor",
     "sectLead": "Section Leader",
+    "infraCoordinator": "Infrastructure and Resources Coordinator",
+    "cooperationCoordinator": "Cooperation and Promotion Coordinator",
+    "organizationCoordinator": "Organization and Administration Coordinator",
+    "projectsCoordinator": "Projects and Members Coordinator",
     "Meta": {
       "title": "Contact us",
       "description": "Contact us and fly with us",
@@ -37,6 +59,8 @@
   "ProjectsPage": {
     "title": "Our Projects",
     "body": "Our Projects",
+    "learnMore": "Learn More",
+    "clickToExplore": "Click on a project to learn more",
     "Meta": {
       "title": "Our Projects",
       "description": "Our Projects",
@@ -54,7 +78,7 @@
       "projects": "Projects",
       "contact": "Contact",
       "join": "Join Us!",
-      "lang": "En"
+      "lang": "English"
     },
     "Footer": {
       "home": "Home",
@@ -64,7 +88,12 @@
     },
     "PersonalCard": {
       "email": "Email:",
-      "imageAlt": "Image of"
+      "imageAlt": "Image of",
+      "imageNotAvailable": "Image not available"
+    },
+    "ProjectComponent": {
+      "imageNotAvailable": "Image not available",
+      "learnMore": "Learn More"
     }
   }
 }

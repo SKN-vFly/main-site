@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { getTranslations } from "next-intl/server";
 import { Footer } from "@/components/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const robotoSans = Roboto({
   weight: ["400", "700"],
@@ -80,14 +81,20 @@ export default async function RootLayout(
 
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${robotoSans.className}`}>
-      <body className="min-h-[100vh]">
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <ScrollToTop />
-          <main className="px-4 lg:w-[66%] lg:px-0 mx-auto">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+    <html
+      lang={locale}
+      className={`${robotoSans.className}`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-screen flex flex-col">
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            <ScrollToTop />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,8 +1,14 @@
+import { Card, CardContent } from "@/components/ui/card";
+
 export function MediaHeader(props: { text: string }) {
   const { text } = props;
   return (
-    <div className="bg-gray-200 text-black dark:bg-gray-800  dark:text-white p-4 w-[80%] min-h-[40vh] flex flex-col items-center justify-center mx-auto my-5 rounded-3xl">
-      <h1 className="text-5xl font-bold">{text}</h1>
-    </div>
+    <Card className="w-full max-w-4xl mx-auto my-8">
+      <CardContent className="flex flex-col items-center justify-center min-h-[40vh] p-8">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          {text}
+        </h1>
+      </CardContent>
+    </Card>
   );
 }

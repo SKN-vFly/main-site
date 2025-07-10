@@ -29,7 +29,7 @@ export const ProjectDisplay = ({ projects }: ProjectDisplayProps) => {
     <ProjectClickedContext.Provider
       value={{ allowInteraction, setAllowInteraction }}
     >
-      <div className="grid grid-cols-3 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project: ProjectType) => (
           <ProjectComponent
             key={project.title}
