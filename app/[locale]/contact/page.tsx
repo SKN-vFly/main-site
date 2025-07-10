@@ -4,6 +4,13 @@ import { PersonalCard } from "@/components/PersonalCard";
 
 export default function Contact() {
   const t = useTranslations("ContactPage");
+  const personalCardT = useTranslations("Components.PersonalCard");
+  const personalCardTranslations = {
+    name: personalCardT("imageAlt"), // Using imageAlt for now
+    email: personalCardT("email"),
+    role: "", // Not used in the component currently
+  };
+
   return (
     <div>
       <h1 className="my-5 text-5xl">{t("joinHeader")}</h1>
@@ -15,6 +22,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("chairman")}
+            translations={personalCardTranslations}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
@@ -23,6 +31,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("supervisor")}
+            translations={personalCardTranslations}
           />
         </div>
       </div>
@@ -35,6 +44,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("sectLead")}
+            translations={personalCardTranslations}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
@@ -43,6 +53,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("sectLead")}
+            translations={personalCardTranslations}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
@@ -51,6 +62,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("sectLead")}
+            translations={personalCardTranslations}
           />
         </div>
         <div className="w-full aspect-[3/4]  border border-black dark:border-white rounded-3xl text-center">
@@ -59,6 +71,7 @@ export default function Contact() {
             email="a@gmail.com"
             imageSrc="/placeholder.jpg"
             role={t("sectLead")}
+            translations={personalCardTranslations}
           />
         </div>
       </div>

@@ -1,17 +1,20 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 
 export function PersonalCard(params: {
   name: string;
   email: string;
   role: string;
   imageSrc: string;
+  translations: {
+    name: string;
+    email: string;
+    role: string;
+  };
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const { name, email, role, imageSrc } = params;
-  const t = useTranslations("Components.PersonalCard");
+  const { name, email, role, imageSrc, translations } = params;
 
   return (
     <div
@@ -28,13 +31,13 @@ export function PersonalCard(params: {
         <h2 className="text-2xl">{name}</h2>
         <h3 className=" text-lg">{role}</h3>
         <h3 className="text-xl">
-          {t("email")}
+          {translations.email}
           <a href={`mailto:${email}`}>{email} </a>
         </h3>
       </div>
       <Image
         src={imageSrc}
-        alt={`${t("imageAlt")}${name}`}
+        alt={`${translations.name}${name}`}
         fill={true}
         className={`rounded-t-2xl object-contain z-10 ${
           isHovered ? "blur-md" : ""

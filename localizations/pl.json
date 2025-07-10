@@ -1,27 +1,70 @@
 {
   "MainPage": {
     "title": "Witaj Świecie z vFly",
-    "subtitle": "Samoloty vFly lecą ziuuuum"
-  },
-  "JoinPage": {
-    "title": "Dołącz do nas",
-    "body": "Dołącz do nas i leć z nami"
+    "subtitle": "Samoloty vFly lecą ziuuuum",
+    "join": "Dołącz do nas",
+    "3rdtitle": "vFly jest najlepsze",
+    "Meta": {
+      "title": "SKN vFly",
+      "description": "SKN vFly to studenckie koło naukowe realizujące wiele projektów",
+      "keywords": "vFly, wirtualne, symulatory, samoloty, latanie, elektronika, badania",
+      "ogTitle": "SKN vFly",
+      "ogDescription": "vFly to studenckie koło naukowe realizujące wiele projektów",
+      "category": "Studenckie koło naukowe",
+      "twitterTitle": "SKN vFly",
+      "twitterDescription": "vFly to studenckie koło naukowe realizujące wiele projektów"
+    }
   },
   "ContactPage": {
-    "title": "Skontaktuj się z nami",
-    "body": "Skontaktuj się z nami i leć z nami"
+    "joinHeader": "Poznaj nasz zespół",
+    "leaders": "Nasi liderzy zespołu:",
+    "sectLeads": "Liderzy sekcji:",
+    "join": "Dołącz do nas!",
+    "chairman": "Przewodniczący",
+    "supervisor": "Opiekun",
+    "sectLead": "Lider Sekcji",
+    "Meta": {
+      "title": "Skontaktuj się z nami",
+      "description": "Skontaktuj się z nami i leć z nami",
+      "keywords": "vFly, wirtualne, symulatory, samoloty, latanie, elektronika, badania",
+      "ogTitle": "Skontaktuj się z nami",
+      "ogDescription": "Skontaktuj się z nami i leć z nami",
+      "category": "Studenckie koło naukowe",
+      "twitterTitle": "Skontaktuj się z nami",
+      "twitterDescription": "Skontaktuj się z nami i leć z nami"
+    }
   },
   "ProjectsPage": {
     "title": "Nasze Projekty",
-    "body": "Nasze Projekty które lecą ziuuum"
+    "body": "Nasze Projekty",
+    "Meta": {
+      "title": "Nasze Projekty",
+      "description": "Nasze Projekty",
+      "keywords": "vFly, wirtualne, symulatory, samoloty, latanie, elektronika, badania",
+      "ogTitle": "Nasze Projekty",
+      "ogDescription": "Nasze Projekty",
+      "category": "Studenckie koło naukowe",
+      "twitterTitle": "Nasze Projekty",
+      "twitterDescription": "Nasze Projekty"
+    }
   },
   "Components": {
     "Navbar": {
-      "home": "O nas",
-      "projects": "Projekt",
+      "home": "Strona główna",
+      "projects": "Projekty",
       "contact": "Kontakt",
-      "join": "Dołącz",
+      "join": "Dołącz do nas!",
       "lang": "Pl"
+    },
+    "Footer": {
+      "home": "Strona główna",
+      "projects": "Projekty",
+      "contact": "Kontakt",
+      "join": "Dołącz do nas!"
+    },
+    "PersonalCard": {
+      "email": "Email:",
+      "imageAlt": "Zdjęcie"
     }
   }
 }
