@@ -76,9 +76,10 @@ async function getProjectContent(
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
-  const projectId = params.slug;
+  const { slug } = await params;
+  const projectId = slug;
   const metadata = await getProjectMetadata(projectId);
 
   if (!metadata) {
@@ -102,9 +103,10 @@ export async function generateMetadata({
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }) {
-  const projectId = params.slug;
+  const { slug } = await params;
+  const projectId = slug;
   const metadata = await getProjectMetadata(projectId);
   const contentData = await getProjectContent(projectId);
 
