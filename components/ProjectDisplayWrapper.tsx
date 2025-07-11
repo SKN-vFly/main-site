@@ -11,6 +11,7 @@ type ProjectType = {
 
 interface ProjectDisplayProps {
   projects: ProjectType[];
+  learnMore: string;
 }
 
 export interface ProjectClickedContextType {
@@ -23,7 +24,10 @@ export const ProjectClickedContext = createContext<ProjectClickedContextType>({
   setAllowInteraction: () => {},
 });
 
-export const ProjectDisplay = ({ projects }: ProjectDisplayProps) => {
+export const ProjectDisplay = ({
+  projects,
+  learnMore,
+}: ProjectDisplayProps) => {
   const [allowInteraction, setAllowInteraction] = useState(true);
   return (
     <ProjectClickedContext.Provider
@@ -37,6 +41,7 @@ export const ProjectDisplay = ({ projects }: ProjectDisplayProps) => {
             description={project.description}
             imgSrc={project.imgSrc}
             link={project.link}
+            learnMore={learnMore}
           />
         ))}
       </div>

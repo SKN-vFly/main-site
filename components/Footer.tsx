@@ -77,7 +77,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("joinExpanded")}
+                {t("join")}
               </a>
             </Button>
           </div>

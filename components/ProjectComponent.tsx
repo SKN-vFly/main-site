@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useContext } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ProjectClickedContext } from "./ProjectDisplayWrapper";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,11 @@ export function ProjectComponent(props: {
   description: string;
   imgSrc: string;
   link: string;
+  learnMore: string;
 }) {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
-  const { title, description, link } = props;
+  const { title, description, link, learnMore } = props;
   const { allowInteraction, setAllowInteraction } = useContext(
     ProjectClickedContext
   );
@@ -49,7 +50,6 @@ export function ProjectComponent(props: {
         >
           <CardContent className="p-0">
             <div className="relative aspect-square">
-              {/* Professional skeleton placeholder */}
               <Skeleton className="w-full h-full rounded-t-lg" />
             </div>
             <div className="p-4">
@@ -64,7 +64,6 @@ export function ProjectComponent(props: {
         </DialogHeader>
         <div className="space-y-4">
           <div className="relative aspect-video">
-            {/* Professional skeleton placeholder */}
             <Skeleton className="w-full h-full rounded-lg" />
           </div>
           <DialogDescription className="text-base">
@@ -72,7 +71,7 @@ export function ProjectComponent(props: {
           </DialogDescription>
           <div className="flex justify-end">
             <Button asChild>
-              <Link href={link}>Learn More</Link>
+              <Link href={link}>{learnMore}</Link>
             </Button>
           </div>
         </div>

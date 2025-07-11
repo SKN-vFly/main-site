@@ -22,21 +22,17 @@ export default function Contact() {
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
       <div className="text-center space-y-6">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-          {t("joinHeader")}
+        <h1 className="text-3xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          {t("contactHeader")}
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Poznaj ludzi, którzy napędzają nasze projekty i sprawiają, że vFly
-          leci do przodu.
+          {t("contactDescription")}
         </p>
       </div>
 
       <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">{t("leaders")}</h2>
-          <p className="text-lg text-muted-foreground">
-            Liderzy naszej organizacji
-          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
@@ -66,12 +62,9 @@ export default function Contact() {
       <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">{t("sectLeads")}</h2>
-          <p className="text-lg text-muted-foreground">
-            Koordynatorzy naszych sekcji
-          </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 max-w-7xl mx-auto">
+        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
           <div className="aspect-[3/4] group">
             <PersonalCard
               name="Jakub Wieczorek"
@@ -116,17 +109,16 @@ export default function Contact() {
         <Card className="max-w-xl mx-auto border-2 border-primary/20 shadow-xl">
           <CardHeader className="space-y-4">
             <CardTitle className="text-2xl md:text-3xl">
-              Gotowy na dołączenie?
+              {t("interestedInJoining")}
             </CardTitle>
             <CardDescription className="text-lg text-justify">
-              Jesteś pasjonatem lotnictwa i technologii? Dołącz do naszego
-              zespołu i twórz przyszłość razem z nami!
+              {t("joinDescription")}
             </CardDescription>
           </CardHeader>
           <CardContent className="pb-8">
             <Button size="lg" className="text-lg px-8 py-3" asChild>
               <a
-                href="https://discord.gg/57huavgd"
+                href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >

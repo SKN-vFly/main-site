@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MicroscopeIcon, PartyPopperIcon, RocketIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function Landing() {
   const t = useTranslations("MainPage");
@@ -18,12 +19,12 @@ export default function Landing() {
       <section className="min-h-[90vh] flex flex-col items-center justify-center text-center space-y-8 px-4">
         <MediaHeader text={t("title")} />
         <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
+          <h2 className="text-2xl md:text-3xl text-muted-foreground font-light italic">
             {t("subtitle")}
           </h2>
           <Button size="lg" asChild>
             <a
-              href="https://discord.gg/57huavgd"
+              href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -36,7 +37,7 @@ export default function Landing() {
       <section className="container mx-auto px-4 py-16 space-y-12">
         <div className="text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">{t("whoWeAre")}</h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed text-justify">
             <p>{t("aboutDescription1")}</p>
             <p>{t("aboutDescription2")}</p>
             <p>{t("aboutDescription3")}</p>
@@ -116,9 +117,17 @@ export default function Landing() {
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center pb-8">
+            <Image
+              src="/invite_vfly.png"
+              alt="Discord QR Code"
+              width={350}
+              height={350}
+              className="mx-auto mb-6"
+            />
+
             <Button size="lg" className="text-lg px-8 py-3" asChild>
               <a
-                href="https://discord.gg/57huavgd"
+                href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >

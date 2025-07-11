@@ -2,7 +2,7 @@
   "MainPage": {
     "title": "Studenckie Koło Naukowe Wirtualnego Latania vFly",
     "subtitle": "Pokonujemy granice tego, co możliwe",
-    "join": "Dołącz do nas",
+    "join": "Dołącz do nas!",
     "3rdtitle": "vFly jest najlepsze",
     "whoWeAre": "Kim Jesteśmy?",
     "aboutDescription1": "Jesteśmy społecznością entuzjastów, naukowców, inżynierów, zrzeszoną pod wspólnym banerem i celem jakim jest pokonywanie granic tego, co możliwe.",
@@ -10,7 +10,7 @@
     "aboutDescription3": "W efekcie takiego rozwoju, zakres działalności koła uległ znaczącemu rozszerzeniu, obejmując większość dziedzin dostępnych na Politechnice Śląskiej, wciąż jednak nie porzuciliśmy oryginalnej misji i silnie działamy w dziedzinie symulatorów lotniczych.",
     "threePillars": "Trzy Filary",
     "ourFoundation": "Nasza Podstawa",
-    "pillarsDescription": "Opieramy naszą działalność o trzy filary: BADANIA, ROZWÓJ, ROZRYWKA.",
+    "pillarsDescription": "Opieramy naszą działalność o trzy filary: Badania, Rozwój, Rozrywka.",
     "research": "Badania",
     "researchSubtitle": "Doskonałość Naukowa",
     "researchDescription": "Działalność naukowa ma dla nas bardzo duże znaczenie i stanowi bardzo ważny element naszej społeczności. Pracujemy dlatego aby jak najwięcej z naszych dokonań przyczyniło się do rozwinięcia wiedzy ludzkości. Prowadzimy badania z wielu dziedzin i na różnych poziomach zaawansowania i ważności. Od symulacji lotniczych przez algorytmikę komputerową po biotechnologię, nasi członkowie działają ambitnie, pchać ludzkość do przodu gdziekolwiek dostrzegą taką możliwość.",
@@ -34,17 +34,20 @@
     }
   },
   "ContactPage": {
-    "joinHeader": "Poznaj nasz zespół",
-    "leaders": "Nasi liderzy zespołu:",
-    "sectLeads": "Koordynatorzy:",
+    "contactHeader": "Poznaj nasz zespół",
+    "contactDescription": "Poznaj ludzi, którzy napędzają nasze projekty i sprawiają, że vFly leci do przodu.",
+    "leaders": "Nasi Liderzy",
+    "sectLeads": "Nasi Koordynatorzy",
     "join": "Dołącz do nas!",
-    "chairman": "Przewodniczący",
+    "chairman": "Prezes",
     "supervisor": "Opiekun",
     "sectLead": "Lider Sekcji",
     "infraCoordinator": "Koordynator ds. Infrastruktury i Zasobów",
     "cooperationCoordinator": "Koordynator ds. Współpracy i Promocji",
     "organizationCoordinator": "Koordynator ds. Organizacji i Administracji",
     "projectsCoordinator": "Koordynator ds. Projektów i Członków",
+    "interestedInJoining": "Zainteresowany dołączeniem?",
+    "joinDescription": "Jesteś pasjonatem nowych innowacyjnych technologii? Dołącz do naszego zespołu i twórz przyszłość razem z nami!",
     "Meta": {
       "title": "Skontaktuj się z nami",
       "description": "Skontaktuj się z nami i leć z nami",
@@ -58,7 +61,7 @@
   },
   "ProjectsPage": {
     "title": "Nasze Projekty",
-    "body": "Nasze Projekty",
+    "description": "Odkryj nasze innowacyjne projekty i rozwiązania",
     "learnMore": "Dowiedz się więcej",
     "clickToExplore": "Kliknij na projekt, aby dowiedzieć się więcej",
     "Meta": {
@@ -90,7 +93,6 @@
       "projects": "Projekty",
       "contact": "Kontakt",
       "join": "Dołącz do nas!",
-      "joinExpanded": "Dołącz do nas!",
       "allRightsReserved": "Wszelkie prawa zastrzeżone."
 
     },

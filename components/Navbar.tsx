@@ -118,7 +118,7 @@ const Navbar = () => {
             </div>
             <Button asChild className="hidden sm:flex">
               <a
-                href="https://discord.gg/57huavgd"
+                href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -179,7 +179,7 @@ const Navbar = () => {
                     </div>
                     <Button asChild className="w-full">
                       <a
-                        href="https://discord.gg/57huavgd"
+                        href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -193,6 +193,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <div className="h-16" /> {/* Spacer for fixed navbar */}
     </>
   );
 };
