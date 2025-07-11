@@ -9,12 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { MicroscopeIcon, PartyPopperIcon, RocketIcon } from "lucide-react";
 
 export default function Landing() {
   const t = useTranslations("MainPage");
   return (
     <div className="w-full">
-      {/* Hero Section */}
       <section className="min-h-[90vh] flex flex-col items-center justify-center text-center space-y-8 px-4">
         <MediaHeader text={t("title")} />
         <div className="max-w-4xl mx-auto space-y-6">
@@ -33,7 +33,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="container mx-auto px-4 py-16 space-y-12">
         <div className="text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">{t("whoWeAre")}</h2>
@@ -45,7 +44,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Three Pillars Section */}
       <section className="container mx-auto px-4 py-16 space-y-12">
         <div className="text-center space-y-4">
           <Badge variant="outline" className="text-lg px-6 py-2">
@@ -54,16 +52,16 @@ export default function Landing() {
           <h3 className="text-3xl md:text-4xl font-bold">
             {t("ourFoundation")}
           </h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {t("pillarsDescription")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-justify break-words hyphens-auto">
           <Card className="h-full">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <span>�</span>
+                <MicroscopeIcon />
                 <span>{t("research")}</span>
               </CardTitle>
               <CardDescription>{t("researchSubtitle")}</CardDescription>
@@ -78,7 +76,7 @@ export default function Landing() {
           <Card className="h-full">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <span>🚀</span>
+                <RocketIcon />
                 <span>{t("development")}</span>
               </CardTitle>
               <CardDescription>{t("developmentSubtitle")}</CardDescription>
@@ -93,7 +91,7 @@ export default function Landing() {
           <Card className="h-full">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <span>🎉</span>
+                <PartyPopperIcon />
                 <span>{t("entertainment")}</span>
               </CardTitle>
               <CardDescription>{t("entertainmentSubtitle")}</CardDescription>
@@ -107,7 +105,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
       <section className="container mx-auto px-4 py-16">
         <Card className="max-w-3xl mx-auto border-2 border-primary/20 shadow-xl">
           <CardHeader className="text-center space-y-4">
@@ -134,12 +131,3 @@ export default function Landing() {
     </div>
   );
 }
-
-// export function generateStaticParams() {
-//   // Generate static paths for all locales
-//   const locales = localeArray;
-//   const paths = locales.map((locale) => ({
-//     params: { locale },
-//   }));
-//   return paths;
-// }

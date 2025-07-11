@@ -38,8 +38,10 @@ export async function generateMetadata({
       locale: locale,
       url: `${locale}/`,
     },
-    // Dopisac sie do autorow
-    authors: [{ name: "Libi Rajzer", url: "https://rajzer.dev" }],
+    authors: [
+      { name: "Libi Rajzer", url: "https://rajzer.dev" },
+      { name: "Michał Czyż", url: "https://c2yz.com" },
+    ],
     keywords: t("keywords"),
     category: t("category"),
     twitter: {

@@ -36,7 +36,7 @@
   "ContactPage": {
     "joinHeader": "Poznaj nasz zespół",
     "leaders": "Nasi liderzy zespołu:",
-    "sectLeads": "Koordynatorzy sekcji:",
+    "sectLeads": "Koordynatorzy:",
     "join": "Dołącz do nas!",
     "chairman": "Przewodniczący",
     "supervisor": "Opiekun",
@@ -81,10 +81,18 @@
       "lang": "Polski"
     },
     "Footer": {
+      "about": "SKN vFly - Studenckie Koło Naukowe z pasją do lotnictwa i projektów technologicznych.",
       "home": "Strona główna",
+      "navigation": "Nawigacja",
+      "community": "Społeczność",
+      "discord": "Discord",
+      "interested": "Zainteresowany naszymi projektami? Dołącz do naszej społeczności!",
       "projects": "Projekty",
       "contact": "Kontakt",
-      "join": "Dołącz do nas!"
+      "join": "Dołącz do nas!",
+      "joinExpanded": "Dołącz do nas!",
+      "allRightsReserved": "Wszelkie prawa zastrzeżone."
+
     },
     "PersonalCard": {
       "email": "Email:",

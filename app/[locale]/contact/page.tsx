@@ -16,12 +16,11 @@ export default function Contact() {
   const personalCardTranslations = {
     name: personalCardT("imageAlt"), // Using imageAlt for now
     email: personalCardT("email"),
-    role: "", // Not used in the component currently
+    role: "",
   };
 
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
-      {/* Hero Section */}
       <div className="text-center space-y-6">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           {t("joinHeader")}
@@ -32,7 +31,6 @@ export default function Contact() {
         </p>
       </div>
 
-      {/* Leaders Section */}
       <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">{t("leaders")}</h2>
@@ -65,7 +63,6 @@ export default function Contact() {
 
       <Separator className="max-w-4xl mx-auto" />
 
-      {/* Section Leaders */}
       <section className="space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">{t("sectLeads")}</h2>
@@ -116,12 +113,12 @@ export default function Contact() {
 
       {/* CTA Section */}
       <section className="text-center space-y-8">
-        <Card className="max-w-3xl mx-auto border-2 border-primary/20 shadow-xl">
+        <Card className="max-w-xl mx-auto border-2 border-primary/20 shadow-xl">
           <CardHeader className="space-y-4">
             <CardTitle className="text-2xl md:text-3xl">
               Gotowy na dołączenie?
             </CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-lg text-justify">
               Jesteś pasjonatem lotnictwa i technologii? Dołącz do naszego
               zespołu i twórz przyszłość razem z nami!
             </CardDescription>
@@ -142,12 +139,3 @@ export default function Contact() {
     </div>
   );
 }
-
-// export function generateStaticParams() {
-//   // Generate static paths for all locales
-//   const locales = localeArray;
-//   const paths = locales.map((locale) => ({
-//     params: { locale },
-//   }));
-//   return paths;
-// }

@@ -11,14 +11,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">vFly</h3>
-            <p className="text-sm text-muted-foreground">
-              SKN vFly - Studenckie Koło Naukowe zajmujące się projektami
-              lotniczymi i symulacjami.
-            </p>
+            <p className="text-sm text-muted-foreground">{t("about")}</p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Nawigacja</h4>
+            <h4 className="text-sm font-semibold">{t("navigation")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -48,7 +45,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Społeczność</h4>
+            <h4 className="text-sm font-semibold">{t("community")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -57,7 +54,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Discord
+                  {t("discord")}
                 </a>
               </li>
               <li>
@@ -65,24 +62,22 @@ export function Footer() {
                   href="/contact"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Kontakt
+                  {t("contact")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Dołącz do nas</h4>
-            <p className="text-sm text-muted-foreground">
-              Zainteresowany naszymi projektami? Dołącz do naszej społeczności!
-            </p>
+            <h4 className="text-sm font-semibold">{t("join")}</h4>
+            <p className="text-sm text-muted-foreground">{t("interested")}</p>
             <Button size="sm" asChild>
               <a
                 href="https://discord.gg/57huavgd"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("join")}
+                {t("joinExpanded")}
               </a>
             </Button>
           </div>
@@ -90,24 +85,11 @@ export function Footer() {
 
         <Separator className="my-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © 2024 SKN vFly. Wszelkie prawa zastrzeżone.
+            &copy; {new Date().getFullYear()} SKN Wirtualnego Latania vFly.{" "}
+            {t("allRightsReserved")}
           </p>
-          <div className="flex space-x-4 text-sm text-muted-foreground">
-            <Link
-              href="/privacy"
-              className="hover:text-primary transition-colors"
-            >
-              Polityka prywatności
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-primary transition-colors"
-            >
-              Regulamin
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

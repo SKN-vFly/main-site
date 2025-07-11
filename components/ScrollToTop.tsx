@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUp } from "lucide-react";
+import { SendHorizonalIcon } from "lucide-react";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,9 +37,9 @@ export function ScrollToTop() {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
         >
-          <ArrowUp className="h-4 w-4" />
+          <SendHorizonalIcon className="h-4 w-4 -rotate-90" />
         </Button>
       )}
     </div>

@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -24,14 +23,12 @@ export function PersonalCard(params: {
   };
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
-  const { name, email, role, imageSrc, translations } = params;
+  const { name, email, role } = params;
 
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer h-full w-full">
           <Card
             className="w-full h-full relative transition-all duration-300 hover:shadow-lg overflow-hidden"
             onMouseEnter={() => setIsHovered(true)}
@@ -39,38 +36,16 @@ export function PersonalCard(params: {
           >
             <CardContent className="p-0 h-full relative">
               <div className="w-full h-full relative">
-                {!imageLoaded && !imageError && (
-                  <Skeleton className="absolute inset-0 w-full h-full rounded-t-lg" />
-                )}
-                <Image
-                  src={imageSrc}
-                  alt={`${translations.name} ${name}`}
-                  fill={true}
-                  className={`object-cover transition-all duration-300 ${
-                    isHovered ? "blur-sm brightness-75" : ""
-                  } ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageError(true)}
-                />
-                {imageError && (
-                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <div className="text-4xl mb-2">👤</div>
-                      <p className="text-sm">Image not available</p>
-                    </div>
-                  </div>
-                )}
+                {/* Professional skeleton placeholder */}
+                <Skeleton className="absolute inset-0 w-full h-full rounded-t-lg" />
+
                 <div
                   className={`absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-4 text-white transition-opacity duration-300 ${
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
                   <Avatar className="w-16 h-16 mb-3 border-2 border-white">
-                    <AvatarImage
-                      src={imageLoaded && !imageError ? imageSrc : undefined}
-                      alt={name}
-                    />
-                    <AvatarFallback className="bg-primary text-primary-foreground">
+                    <AvatarFallback className="bg-primary text-primary-foreground text-lg font-bold">
                       {name
                         .split(" ")
                         .map((n) => n[0])
@@ -96,11 +71,7 @@ export function PersonalCard(params: {
       <HoverCardContent className="w-80">
         <div className="flex space-x-4">
           <Avatar>
-            <AvatarImage
-              src={imageLoaded && !imageError ? imageSrc : undefined}
-              alt={name}
-            />
-            <AvatarFallback>
+            <AvatarFallback className="bg-primary text-primary-foreground">
               {name
                 .split(" ")
                 .map((n) => n[0])
