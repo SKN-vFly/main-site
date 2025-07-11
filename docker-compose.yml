@@ -1,10 +1,22 @@
 version: "3.9"
 
 services:
-  site:
-    container_name: main-site
+  nextapp:
     restart: unless-stopped
+    container_name: nextapp
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vfly.entrypoints=websecure"
+      - "traefik.http.routers.vfly.rule=Host(`main.vfly.org.pl`)"
+      - "traefik.http.routers.vfly.tls=true"
+      - "traefik.http.routers.vfly.tls.certresolver=production"
+      - "traefik.http.routers.vfly.tls.domains[0].main=main.vfly.org.pl"
     image: nextapp
     build: .
     ports:
-      - "3000:3000"
+      - "3112:3000"
+
+networks:
+  default:
+    name: router
+    external: true
