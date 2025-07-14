@@ -7,10 +7,12 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.vfly.entrypoints=websecure"
-      - "traefik.http.routers.vfly.rule=Host(`main.vfly.org.pl`)"
+      - "traefik.http.routers.vfly.rule=Host(`vfly.org.pl`, `www.vfly.org.pl`, `main.vfly.org.pl`)"
       - "traefik.http.routers.vfly.tls=true"
       - "traefik.http.routers.vfly.tls.certresolver=production"
-      - "traefik.http.routers.vfly.tls.domains[0].main=main.vfly.org.pl"
+      - "traefik.http.routers.vfly.tls.domains[0].main=vfly.org.pl"
+      - "traefik.http.routers.vfly.tls.domains[1].main=www.vfly.org.pl"
+      - "traefik.http.routers.vfly.tls.domains[2].main=main.vfly.org.pl"
     image: nextapp
     build: .
     ports:
