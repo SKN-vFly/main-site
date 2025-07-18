@@ -46,8 +46,10 @@
     "cooperationCoordinator": "Koordynator ds. Współpracy i Promocji",
     "organizationCoordinator": "Koordynator ds. Organizacji i Administracji",
     "projectsCoordinator": "Koordynator ds. Projektów i Członków",
+    "katowiceCoordinator": "Koordynator ds. Inicjatyw w Katowicach",
     "interestedInJoining": "Zainteresowany dołączeniem?",
     "joinDescription": "Jesteś pasjonatem nowych innowacyjnych technologii? Dołącz do naszego zespołu i twórz przyszłość razem z nami!",
+    "hoverNote": "Najedź na zdjęcie, aby zobaczyć więcej informacji",
     "Meta": {
       "title": "Skontaktuj się z nami",
       "description": "Skontaktuj się z nami i leć z nami",
@@ -64,6 +66,7 @@
     "description": "Odkryj nasze innowacyjne projekty i rozwiązania",
     "learnMore": "Dowiedz się więcej",
     "clickToExplore": "Kliknij na projekt, aby dowiedzieć się więcej",
+    "notfound": "Nie znaleziono projektów. Spróbuj ponownie później!",
     "Meta": {
       "title": "Nasze Projekty",
       "description": "Nasze Projekty",
@@ -94,7 +97,6 @@
       "contact": "Kontakt",
       "join": "Dołącz do nas!",
       "allRightsReserved": "Wszelkie prawa zastrzeżone."
-
     },
     "PersonalCard": {
       "email": "Email:",

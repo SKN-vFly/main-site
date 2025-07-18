@@ -1,43 +1,37 @@
-"use client";
-import React from "react";
-import { useTranslations, useLocale } from "next-intl";
-import { Link } from "@/i18n/routing";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+'use client'
+import React from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+import { Link } from '@/i18n/routing'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Globe, Menu } from "lucide-react";
-import { ThemeSwitcher } from "./theme-switcher";
+} from '@/components/ui/dropdown-menu'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { Globe, Menu } from 'lucide-react'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 const Navbar = () => {
-  const t = useTranslations("Components.Navbar");
-  const pathname = usePathname();
+  const t = useTranslations('Components.Navbar')
+  const pathname = usePathname()
 
   // Helper function to check if a path is active
   const isActive = (path: string) => {
-    if (path === "/") {
-      return pathname === "/" || pathname === "/en" || pathname === "/pl";
+    if (path === '/') {
+      return pathname === '/' || pathname === '/en' || pathname === '/pl'
     }
-    return pathname.includes(path);
-  };
+    return pathname.includes(path)
+  }
 
   return (
     <>
@@ -47,12 +41,7 @@ const Navbar = () => {
           <div className="flex items-center flex-1">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 relative">
-                <Image
-                  src="/logo.svg"
-                  alt="Logo vFly"
-                  fill={true}
-                  className="object-contain"
-                />
+                <Image src="/logo.svg" alt="Logo vFly" fill={true} className="object-contain" />
               </div>
               <span className="font-bold text-lg">vFly</span>
             </Link>
@@ -67,12 +56,10 @@ const Navbar = () => {
                     <Link
                       href="/"
                       className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                        isActive("/")
-                          ? "bg-accent text-accent-foreground"
-                          : "bg-background"
+                        isActive('/') ? 'bg-accent text-accent-foreground' : 'bg-background'
                       }`}
                     >
-                      {t("home")}
+                      {t('home')}
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -81,12 +68,10 @@ const Navbar = () => {
                     <Link
                       href="/projects"
                       className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                        isActive("/projects")
-                          ? "bg-accent text-accent-foreground"
-                          : "bg-background"
+                        isActive('/projects') ? 'bg-accent text-accent-foreground' : 'bg-background'
                       }`}
                     >
-                      {t("projects")}
+                      {t('projects')}
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -95,12 +80,10 @@ const Navbar = () => {
                     <Link
                       href="/contact"
                       className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                        isActive("/contact")
-                          ? "bg-accent text-accent-foreground"
-                          : "bg-background"
+                        isActive('/contact') ? 'bg-accent text-accent-foreground' : 'bg-background'
                       }`}
                     >
-                      {t("contact")}
+                      {t('contact')}
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -122,7 +105,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("join")}
+                {t('join')}
               </a>
             </Button>
 
@@ -141,32 +124,26 @@ const Navbar = () => {
                   <Link
                     href="/"
                     className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive("/")
-                        ? "text-primary font-semibold"
-                        : "hover:text-primary"
+                      isActive('/') ? 'text-primary font-semibold' : 'hover:text-primary'
                     }`}
                   >
-                    {t("home")}
+                    {t('home')}
                   </Link>
                   <Link
                     href="/projects"
                     className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive("/projects")
-                        ? "text-primary font-semibold"
-                        : "hover:text-primary"
+                      isActive('/projects') ? 'text-primary font-semibold' : 'hover:text-primary'
                     }`}
                   >
-                    {t("projects")}
+                    {t('projects')}
                   </Link>
                   <Link
                     href="/contact"
                     className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive("/contact")
-                        ? "text-primary font-semibold"
-                        : "hover:text-primary"
+                      isActive('/contact') ? 'text-primary font-semibold' : 'hover:text-primary'
                     }`}
                   >
-                    {t("contact")}
+                    {t('contact')}
                   </Link>
                   <div className="border-t pt-4 mt-4 space-y-4">
                     <div className="flex items-center justify-between">
@@ -183,7 +160,7 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {t("join")}
+                        {t('join')}
                       </a>
                     </Button>
                   </div>
@@ -195,12 +172,12 @@ const Navbar = () => {
       </nav>
       <div className="h-16" /> {/* Spacer for fixed navbar */}
     </>
-  );
-};
+  )
+}
 
 function LangSwitcher() {
-  const url = usePathname();
-  const currentLocale = useLocale();
+  const url = usePathname()
+  const currentLocale = useLocale()
 
   return (
     <DropdownMenu>
@@ -212,10 +189,10 @@ function LangSwitcher() {
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
           <Link
-            href={`/${url.split("/").slice(2).join("/")}`}
+            href={`/${url.split('/').slice(2).join('/')}`}
             locale="en"
             className={`flex items-center space-x-2 ${
-              currentLocale === "en" ? "bg-accent text-accent-foreground" : ""
+              currentLocale === 'en' ? 'bg-accent text-accent-foreground' : ''
             }`}
           >
             <span className="text-lg">🇺🇸</span>
@@ -224,10 +201,10 @@ function LangSwitcher() {
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link
-            href={`/${url.split("/").slice(2).join("/")}`}
+            href={`/${url.split('/').slice(2).join('/')}`}
             locale="pl"
             className={`flex items-center space-x-2 ${
-              currentLocale === "pl" ? "bg-accent text-accent-foreground" : ""
+              currentLocale === 'pl' ? 'bg-accent text-accent-foreground' : ''
             }`}
           >
             <span className="text-lg">🇵🇱</span>
@@ -236,7 +213,7 @@ function LangSwitcher() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

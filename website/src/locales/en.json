@@ -34,9 +34,10 @@
     }
   },
   "ContactPage": {
-    "joinHeader": "Meet our team",
-    "leaders": "Our team leaders:",
-    "sectLeads": "Coordinators:",
+    "contactHeader": "Meet Our Team",
+    "contactDescription": "Get to know the people who drive our projects and make vFly fly forward.",
+    "leaders": "Our Leaders",
+    "sectLeads": "Our Coordinators",
     "join": "Join Us!",
     "chairman": "Chairman",
     "supervisor": "Supervisor",
@@ -45,22 +46,27 @@
     "cooperationCoordinator": "Cooperation and Promotion Coordinator",
     "organizationCoordinator": "Organization and Administration Coordinator",
     "projectsCoordinator": "Projects and Members Coordinator",
+    "katowiceCoordinator": "Katowice Initiatives Coordinator",
+    "interestedInJoining": "Interested in joining?",
+    "joinDescription": "Are you passionate about new innovative technologies? Join our team and create the future with us!",
+    "hoverNote": "Hover over the photo to see more information",
     "Meta": {
-      "title": "Contact us",
+      "title": "Contact Us",
       "description": "Contact us and fly with us",
-      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research",
-      "ogTitle": "Contact us",
+      "keywords": "vFly, wirtualne, symulatory, samoloty, latanie, elektronika, badania",
+      "ogTitle": "Contact Us",
       "ogDescription": "Contact us and fly with us",
       "category": "Student Science Club",
-      "twitterTitle": "Contact us",
-      "twitterDescription": "Contact us and fly with us"
+      "twitterTitle": "Contact Us",
+      "twitterDescription": "Contact us and fly with us!"
     }
   },
   "ProjectsPage": {
     "title": "Our Projects",
-    "body": "Our Projects",
+    "description": "Discover our innovative projects and solutions",
     "learnMore": "Learn More",
     "clickToExplore": "Click on a project to learn more",
+    "notfound": "No projects found. Check back later!",
     "Meta": {
       "title": "Our Projects",
       "description": "Our Projects",
