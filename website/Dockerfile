@@ -73,6 +73,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
 # Set proper permissions for entrypoint script
 RUN chmod +x entrypoint.sh
 
+# Create media directory with proper permissions
+RUN mkdir -p media && chown nextjs:nodejs media
+
 USER nextjs
 
 EXPOSE 3000

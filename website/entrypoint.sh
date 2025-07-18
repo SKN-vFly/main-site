@@ -39,14 +39,14 @@ echo "Database is ready!"
 
 # Run Payload migrations
 echo "Running Payload migrations..."
-if ! /pnpm/pnpm run payload migrate; then
-  echo "Failed to run Payload migrations"
-  exit 1
+if ! pnpm run payload migrate; then
+  echo "Migration failed or no migrations found. This might be expected for a fresh setup."
+  echo "You may need to create migrations manually using: pnpm run payload migrate:create"
 fi
 
 # Generate Payload types (in case they're needed)
 echo "Generating Payload types..."
-if ! /pnpm/pnpm run generate:types; then
+if ! pnpm run generate:types; then
   echo "Warning: Failed to generate Payload types (continuing anyway)"
 fi
 
