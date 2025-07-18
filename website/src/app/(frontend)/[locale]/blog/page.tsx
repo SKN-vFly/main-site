@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server'
 import { SearchableBlog } from '@/components/SearchableBlog'
-import { Blog } from '@/payload-types'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 

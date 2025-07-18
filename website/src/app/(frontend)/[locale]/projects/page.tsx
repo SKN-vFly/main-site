@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server'
 import { SearchableProjects } from '@/components/SearchableProjects'
-import { Project } from '@/payload-types'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
