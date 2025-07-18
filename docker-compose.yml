@@ -34,6 +34,10 @@ services:
     build:
       context: ./website
       dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_DISCORD_INVITE_URL=${NEXT_PUBLIC_DISCORD_INVITE_URL}
+        - NEXT_PUBLIC_FACEBOOK_URL=${NEXT_PUBLIC_FACEBOOK_URL}
+        - NEXT_PUBLIC_GITHUB_URL=${NEXT_PUBLIC_GITHUB_URL}
     ports:
       - "3112:3000"
     environment:
