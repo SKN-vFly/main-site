@@ -78,10 +78,29 @@
       "twitterDescription": "Nasze Projekty"
     }
   },
+  "BlogPage": {
+    "title": "Nasz Blog",
+    "description": "Przeczytaj o naszych najnowszych odkryciach, aktualizacjach i spostrzeżeniach",
+    "readMore": "Czytaj więcej",
+    "clickToExplore": "Kliknij na wpis, aby przeczytać więcej",
+    "notfound": "Nie znaleziono wpisów na blogu. Spróbuj ponownie później!",
+    "searchPlaceholder": "Szukaj...",
+    "Meta": {
+      "title": "Nasz Blog",
+      "description": "Nasz Blog",
+      "keywords": "vFly, wirtualne, symulatory, samoloty, latanie, elektronika, badania, blog",
+      "ogTitle": "Nasz Blog",
+      "ogDescription": "Nasz Blog",
+      "category": "Studenckie koło naukowe",
+      "twitterTitle": "Nasz Blog",
+      "twitterDescription": "Nasz Blog"
+    }
+  },
   "Components": {
     "Navbar": {
       "home": "Strona główna",
       "projects": "Projekty",
+      "blog": "Blog",
       "contact": "Kontakt",
       "join": "Dołącz do nas!",
       "lang": "Polski",
@@ -110,6 +129,39 @@
     "ProjectComponent": {
       "imageNotAvailable": "Zdjęcie niedostępne",
       "learnMore": "Dowiedz się więcej"
+    }
+  },
+  "Collections": {
+    "Projects": {
+      "title": "Tytuł Projektu",
+      "featured_image": "Zdjęcie Główne",
+      "description": "Opis Projektu",
+      "abstract": "Abstrakt",
+      "tags": "Tagi (oddzielone przecinkami)",
+      "slug": "Identyfikator URL",
+      "publishedDate": "Data Publikacji",
+      "status": "Status",
+      "draft": "Szkic",
+      "published": "Opublikowano"
+    },
+    "Blog": {
+      "title": "Tytuł Wpisu",
+      "featured_image": "Zdjęcie Główne",
+      "excerpt": "Wstęp Wpisu",
+      "content": "Treść",
+      "tags": "Tagi (oddzielone przecinkami)",
+      "slug": "Identyfikator URL",
+      "publishedDate": "Data Publikacji",
+      "status": "Status",
+      "draft": "Szkic",
+      "published": "Opublikowano"
+    },
+    "Users": {
+      "email": "Email",
+      "roles": "Role"
+    },
+    "Media": {
+      "alt": "Tekst Alternatywny"
     }
   }
 }

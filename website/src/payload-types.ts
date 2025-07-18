@@ -167,6 +167,8 @@ export interface Media {
 export interface Blog {
   id: number;
   title: string;
+  featured_image: number | Media;
+  excerpt: string;
   content: {
     root: {
       type: string;
@@ -182,17 +184,13 @@ export interface Blog {
     };
     [k: string]: unknown;
   };
+  tags?: string | null;
+  slug?: string | null;
+  publishedDate?: string | null;
+  status?: ('draft' | 'published') | null;
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -337,18 +335,16 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface BlogSelect<T extends boolean = true> {
   title?: T;
+  featured_image?: T;
+  excerpt?: T;
   content?: T;
+  tags?: T;
+  slug?: T;
+  publishedDate?: T;
+  status?: T;
   updatedAt?: T;
   createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

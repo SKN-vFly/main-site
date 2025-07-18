@@ -78,10 +78,29 @@
       "twitterDescription": "Our Projects"
     }
   },
+  "BlogPage": {
+    "title": "Our Blog",
+    "description": "Read about our latest discoveries, updates, and insights",
+    "readMore": "Read More",
+    "clickToExplore": "Click on a post to read more",
+    "notfound": "No blog posts found. Check back later!",
+    "searchPlaceholder": "Search...",
+    "Meta": {
+      "title": "Our Blog",
+      "description": "Our Blog",
+      "keywords": "vFly, virtual, simulators, planes, fly, electronic, research, blog",
+      "ogTitle": "Our Blog",
+      "ogDescription": "Our Blog",
+      "category": "Student Science Club",
+      "twitterTitle": "Our Blog",
+      "twitterDescription": "Our Blog"
+    }
+  },
   "Components": {
     "Navbar": {
       "home": "Home",
       "projects": "Projects",
+      "blog": "Blog",
       "contact": "Contact",
       "join": "Join Us!",
       "lang": "English",
@@ -110,6 +129,39 @@
     "ProjectComponent": {
       "imageNotAvailable": "Image not available",
       "learnMore": "Learn More"
+    }
+  },
+  "Collections": {
+    "Projects": {
+      "title": "Project Title",
+      "featured_image": "Featured Image",
+      "description": "Project Description",
+      "abstract": "Abstract",
+      "tags": "Tags (Comma-separated)",
+      "slug": "URL Slug",
+      "publishedDate": "Published Date",
+      "status": "Status",
+      "draft": "Draft",
+      "published": "Published"
+    },
+    "Blog": {
+      "title": "Blog Title",
+      "featured_image": "Featured Image",
+      "excerpt": "Blog Excerpt",
+      "content": "Content",
+      "tags": "Tags (Comma-separated)",
+      "slug": "URL Slug",
+      "publishedDate": "Published Date",
+      "status": "Status",
+      "draft": "Draft",
+      "published": "Published"
+    },
+    "Users": {
+      "email": "Email",
+      "roles": "Roles"
+    },
+    "Media": {
+      "alt": "Alt Text"
     }
   }
 }

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState, useContext } from 'react'
 import { Link } from '@/i18n/routing'
-import { ProjectClickedContext } from './ProjectDisplayWrapper'
+import { BlogClickedContext } from './BlogDisplayWrapper'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -14,14 +14,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Project } from '@/payload-types'
+import { Blog } from '@/payload-types'
 import Image from 'next/image'
 
-export function ProjectComponent(props: { project: Project; learnMore: string }) {
+export function BlogComponent(props: { post: Blog; readMore: string }) {
   const [hover, setHover] = useState(false)
   const [open, setOpen] = useState(false)
-  const { project, learnMore } = props
-  const { allowInteraction, setAllowInteraction } = useContext(ProjectClickedContext)
+  const { post, readMore } = props
+  const { allowInteraction, setAllowInteraction } = useContext(BlogClickedContext)
 
   useEffect(() => {
     setAllowInteraction(!open)
@@ -45,14 +45,14 @@ export function ProjectComponent(props: { project: Project; learnMore: string })
         >
           <CardContent className="p-0">
             <div className="relative aspect-square">
-              {project.featured_image ? (
+              {post.featured_image ? (
                 <Image
                   src={
-                    typeof project.featured_image === 'object' && project.featured_image.url
-                      ? project.featured_image.url
+                    typeof post.featured_image === 'object' && post.featured_image.url
+                      ? post.featured_image.url
                       : ''
                   }
-                  alt={project.project_title}
+                  alt={post.title}
                   className="w-full h-full object-cover rounded-t-lg"
                   width={500}
                   height={500}
@@ -62,38 +62,36 @@ export function ProjectComponent(props: { project: Project; learnMore: string })
               )}
             </div>
             <div className="p-4 space-y-3">
-              <CardTitle className="text-center">{project.project_title}</CardTitle>
-              {project.tags &&
-                typeof project.tags === 'string' &&
-                project.tags.trim().length > 0 && (
-                  <div className="flex flex-wrap gap-1 justify-center">
-                    {project.tags
-                      .split(',')
-                      .slice(0, 3)
-                      .map((tag: string, index: number) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
-                          {tag.trim()}
-                        </Badge>
-                      ))}
-                    {project.tags.split(',').length > 3 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.tags.split(',').length - 3}
+              <CardTitle className="text-center">{post.title}</CardTitle>
+              {post.tags && typeof post.tags === 'string' && post.tags.trim().length > 0 && (
+                <div className="flex flex-wrap gap-1 justify-center">
+                  {post.tags
+                    .split(',')
+                    .slice(0, 3)
+                    .map((tag: string, index: number) => (
+                      <Badge key={index} variant="secondary" className="text-xs">
+                        {tag.trim()}
                       </Badge>
-                    )}
-                  </div>
-                )}
+                    ))}
+                  {post.tags.split(',').length > 3 && (
+                    <Badge variant="outline" className="text-xs">
+                      +{post.tags.split(',').length - 3}
+                    </Badge>
+                  )}
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{project.project_title}</DialogTitle>
+          <DialogTitle>{post.title}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
-          {project.tags && typeof project.tags === 'string' && project.tags.trim().length > 0 && (
+          {post.tags && typeof post.tags === 'string' && post.tags.trim().length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {project.tags.split(',').map((tag: string, index: number) => (
+              {post.tags.split(',').map((tag: string, index: number) => (
                 <Badge key={index} variant="secondary">
                   {tag.trim()}
                 </Badge>
@@ -101,14 +99,14 @@ export function ProjectComponent(props: { project: Project; learnMore: string })
             </div>
           )}
           <div className="relative aspect-video">
-            {project.featured_image ? (
+            {post.featured_image ? (
               <Image
                 src={
-                  typeof project.featured_image === 'object' && project.featured_image.url
-                    ? project.featured_image.url
+                  typeof post.featured_image === 'object' && post.featured_image.url
+                    ? post.featured_image.url
                     : ''
                 }
-                alt={project.project_title}
+                alt={post.title}
                 className="w-full h-full object-cover rounded-lg shadow-lg"
                 width={500}
                 height={300}
@@ -117,10 +115,10 @@ export function ProjectComponent(props: { project: Project; learnMore: string })
               <Skeleton className="w-full h-full rounded-lg" />
             )}
           </div>
-          <DialogDescription className="text-base">{project.project_description}</DialogDescription>
+          <DialogDescription className="text-base">{post.excerpt}</DialogDescription>
           <div className="flex justify-end">
             <Button asChild>
-              <Link href={`/projects/${project.slug}`}>{learnMore}</Link>
+              <Link href={`/blog/${post.slug}`}>{readMore}</Link>
             </Button>
           </div>
         </div>

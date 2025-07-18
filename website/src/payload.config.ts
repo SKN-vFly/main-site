@@ -6,6 +6,8 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { en } from '@payloadcms/translations/languages/en'
+import { pl } from '@payloadcms/translations/languages/pl'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -41,5 +43,9 @@ export default buildConfig({
   localization: {
     locales: ['en', 'pl'],
     defaultLocale: 'pl',
+  },
+  i18n: {
+    supportedLanguages: { en, pl },
+    fallbackLanguage: 'en',
   },
 })

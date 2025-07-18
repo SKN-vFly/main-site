@@ -80,6 +80,18 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
+                      href="/blog"
+                      className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                        isActive('/blog') ? 'bg-accent text-accent-foreground' : 'bg-background'
+                      }`}
+                    >
+                      {t('blog')}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
                       href="/contact"
                       className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                         isActive('/contact') ? 'bg-accent text-accent-foreground' : 'bg-background'
@@ -177,6 +189,17 @@ const Navbar = () => {
                         }`}
                       >
                         {t('projects')}
+                      </Link>
+                      <Link
+                        href="/blog"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`group flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                          isActive('/blog')
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'hover:bg-accent hover:text-accent-foreground active:scale-95'
+                        }`}
+                      >
+                        {t('blog')}
                       </Link>
                       <Link
                         href="/contact"

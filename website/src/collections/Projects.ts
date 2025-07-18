@@ -3,6 +3,16 @@ import type { CollectionConfig } from 'payload'
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
+  labels: {
+    singular: {
+      en: 'Project',
+      pl: 'Projekt',
+    },
+    plural: {
+      en: 'Projects',
+      pl: 'Projekty',
+    },
+  },
   access: {
     read: () => true,
   },
@@ -11,27 +21,39 @@ export const Projects: CollectionConfig = {
       name: 'project_title',
       type: 'text',
       required: true,
-      label: 'Project Title',
+      label: {
+        en: 'Project Title',
+        pl: 'Tytuł Projektu',
+      },
     },
     {
       name: 'featured_image',
       type: 'upload',
       relationTo: 'media',
       required: true,
-      label: 'Featured Image',
+      label: {
+        en: 'Featured Image',
+        pl: 'Zdjęcie Główne',
+      },
     },
     {
       name: 'project_description',
       type: 'textarea',
       required: true,
-      label: 'Project Description',
+      label: {
+        en: 'Project Description',
+        pl: 'Opis Projektu',
+      },
     },
     {
       name: 'abstract',
       type: 'richText',
       editor: lexicalEditor({}),
       required: true,
-      label: 'Abstract',
+      label: {
+        en: 'Abstract',
+        pl: 'Abstrakt',
+      },
     },
     {
       name: 'tags',
@@ -39,7 +61,10 @@ export const Projects: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
-      label: 'Tags (Comma-separated)',
+      label: {
+        en: 'Tags (Comma-separated)',
+        pl: 'Tagi (oddzielone przecinkami)',
+      },
     },
     {
       name: 'slug',
@@ -70,7 +95,10 @@ export const Projects: CollectionConfig = {
           },
         ],
       },
-      label: 'URL Slug',
+      label: {
+        en: 'URL Slug',
+        pl: 'Identyfikator URL',
+      },
     },
     {
       name: 'publishedDate',
@@ -82,18 +110,27 @@ export const Projects: CollectionConfig = {
         },
       },
       defaultValue: () => new Date(),
-      label: 'Published Date',
+      label: {
+        en: 'Published Date',
+        pl: 'Data Publikacji',
+      },
     },
     {
       name: 'status',
       type: 'select',
       options: [
         {
-          label: 'Draft',
+          label: {
+            en: 'Draft',
+            pl: 'Szkic',
+          },
           value: 'draft',
         },
         {
-          label: 'Published',
+          label: {
+            en: 'Published',
+            pl: 'Opublikowano',
+          },
           value: 'published',
         },
       ],
@@ -101,7 +138,10 @@ export const Projects: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
-      label: 'Status',
+      label: {
+        en: 'Status',
+        pl: 'Status',
+      },
     },
   ],
   admin: {
