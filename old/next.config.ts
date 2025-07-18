@@ -1,3 +1,4 @@
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
  
@@ -8,4 +9,4 @@ const nextConfig: NextConfig = {
   // No need for turbopack config as it's handled by CLI flag
 };
 
-export default withNextIntl(nextConfig);
+export default withPayload(withNextIntl(nextConfig));

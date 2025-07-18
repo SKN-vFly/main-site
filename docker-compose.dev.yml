@@ -1,0 +1,26 @@
+services:
+  website_db:
+    hostname: website_db
+    container_name: website_db_dev
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pass}
+      POSTGRES_DB: ${POSTGRES_DB:-website}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-d', '${POSTGRES_DB:-website}', '-U', '${POSTGRES_USER:-user}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    ports:
+      - '${DATABASE_EXTERNAL_PORT:-5438}:5432'
+
+networks:
+  default:
+    name: website_network
+    driver: bridge
