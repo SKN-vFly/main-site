@@ -1,120 +1,80 @@
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import { Link } from "@/i18n/routing";
-import Image from "next/image";
-import fs from "fs";
-import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
-import {
-  HighlightBox,
-  ProjectGrid,
-  TechStack,
-} from "@/components/mdx/MDXComponents";
+import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { ArrowLeft } from 'lucide-react'
+import { Link } from '@/i18n/routing'
+import Image from 'next/image'
+import { getPayload } from 'payload'
+import config from '@/payload.config'
+import { Project } from '@/payload-types'
+import { RichText } from '@/components/RichText'
 
-interface ProjectMetadata {
-  id: string;
-  title: string;
-  description: string;
-  imgSrc: string;
-  tags: string[];
-  featured: boolean;
-  publishedAt: string;
-}
-
-async function getProjectMetadata(
-  projectId: string
-): Promise<ProjectMetadata | null> {
+async function getProject(slug: string): Promise<Project | null> {
   try {
-    const projectsPath = path.join(
-      process.cwd(),
-      "public",
-      "projects",
-      "projects.json"
-    );
-    const jsonData = fs.readFileSync(projectsPath, "utf8");
-    const projects: ProjectMetadata[] = JSON.parse(jsonData);
-    return projects.find((p) => p.id === projectId) || null;
-  } catch (error) {
-    console.error("Error fetching project metadata:", error);
-    return null;
-  }
-}
-
-async function getProjectContent(
-  projectId: string
-): Promise<{ content: React.ReactElement } | null> {
-  try {
-    const contentPath = path.join(
-      process.cwd(),
-      "public",
-      "projects",
-      `${projectId}.mdx`
-    );
-    const source = fs.readFileSync(contentPath, "utf8");
-
-    const { content } = await compileMDX({
-      source,
-      options: {
-        parseFrontmatter: true,
+    const payload = await getPayload({ config })
+    const result = await payload.find({
+      collection: 'projects',
+      where: {
+        and: [
+          {
+            slug: {
+              equals: slug,
+            },
+          },
+          {
+            status: {
+              equals: 'published',
+            },
+          },
+        ],
       },
-      components: {
-        HighlightBox,
-        ProjectGrid,
-        TechStack,
-      },
-    });
-
-    return { content };
+      limit: 1,
+      depth: 2,
+    })
+    return result.docs[0] || null
   } catch (error) {
-    console.error("Error fetching project content:", error);
-    return null;
+    console.error('Failed to fetch project:', error)
+    return null
   }
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
+  params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const projectId = slug;
-  const metadata = await getProjectMetadata(projectId);
+  const { slug } = await params
+  const project = await getProject(slug)
 
-  if (!metadata) {
+  if (!project) {
     return {
-      title: "Project Not Found",
-      description: "The requested project could not be found.",
-    };
+      title: 'Project Not Found',
+    }
   }
 
   return {
-    title: metadata.title,
-    description: metadata.description,
-    openGraph: {
-      title: metadata.title,
-      description: metadata.description,
-      images: [metadata.imgSrc],
-    },
-  };
+    title: project.project_title,
+    description: project.project_description,
+  }
 }
 
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
+  params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params;
-  const projectId = slug;
-  const metadata = await getProjectMetadata(projectId);
-  const contentData = await getProjectContent(projectId);
+  const { slug } = await params
+  const project = await getProject(slug)
 
-  if (!metadata || !contentData) {
-    notFound();
+  if (!project) {
+    notFound()
   }
 
-  const { content } = contentData;
+  const featuredImageUrl =
+    typeof project.featured_image === 'object' && project.featured_image?.url
+      ? project.featured_image.url
+      : null
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
@@ -133,34 +93,35 @@ export default async function ProjectPage({
 
       {/* Project Header */}
       <div className="mb-12">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {metadata.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-          {metadata.title}
+          {project.project_title}
         </h1>
 
-        <p className="text-xl text-muted-foreground mb-6">
-          {metadata.description}
-        </p>
+        <p className="text-xl text-muted-foreground mb-4">{project.project_description}</p>
 
-        <div className="text-sm text-muted-foreground mb-8">
-          Published on {new Date(metadata.publishedAt).toLocaleDateString()}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags && typeof project.tags === 'string' && project.tags.trim().length > 0 ? (
+            project.tags.split(',').map((tag: string, index: number) => (
+              <Badge key={index} variant="secondary">
+                {tag.trim()}
+              </Badge>
+            ))
+          ) : (
+            <Badge variant="secondary">No Tags</Badge>
+          )}
         </div>
 
-        {metadata.imgSrc && (
+        <div className="text-sm text-muted-foreground mb-4">
+          {project.publishedDate && (
+            <>Published on {new Date(project.publishedDate).toLocaleDateString()}</>
+          )}
+        </div>
+
+        {featuredImageUrl && (
           <div className="mb-8">
             <Image
-              src={metadata.imgSrc}
-              alt={metadata.title}
+              src={featuredImageUrl}
+              alt={project.project_title}
               width={800}
               height={400}
               className="w-full h-96 object-cover rounded-lg shadow-lg"
@@ -170,9 +131,9 @@ export default async function ProjectPage({
       </div>
 
       {/* Project Content */}
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        {content}
+      <div className="mt-8">
+        <RichText data={project.abstract} />
       </div>
     </div>
-  );
+  )
 }

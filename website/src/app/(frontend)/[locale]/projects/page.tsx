@@ -1,30 +1,33 @@
 import { getTranslations } from 'next-intl/server'
 import { ProjectDisplay } from '@/components/ProjectDisplayWrapper'
+import { Project } from '@/payload-types'
+import { getPayload } from 'payload'
+import config from '@/payload.config'
+import { Input } from '@/components/ui/input'
 
-interface ProjectMetadata {
-  id: string
-  title: string
-  description: string
-  imgSrc: string
-  tags: string[]
-  featured: boolean
-  publishedAt: string
-}
-
-async function getProjects(): Promise<ProjectMetadata[]> {
-  return []
+async function getProjects() {
+  try {
+    const payload = await getPayload({ config })
+    const result = await payload.find({
+      collection: 'projects',
+      where: {
+        status: {
+          equals: 'published',
+        },
+      },
+      sort: '-publishedDate',
+      depth: 2,
+    })
+    return result.docs
+  } catch (error) {
+    console.error('Failed to fetch projects:', error)
+    return []
+  }
 }
 
 export default async function Projects() {
   const t = await getTranslations('ProjectsPage')
-  const projectsData = await getProjects()
-
-  const projects = projectsData.map((project) => ({
-    title: project.title,
-    description: project.description,
-    imgSrc: project.imgSrc,
-    link: `/projects/${project.id}`,
-  }))
+  const projects = await getProjects()
 
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
@@ -35,6 +38,10 @@ export default async function Projects() {
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           {t('description')}
         </p>
+      </div>
+
+      <div className="text-center mb-8">
+        <Input type="text" className="max-w-md mx-auto" placeholder={t('searchPlaceholder')} />
       </div>
 
       <div className="space-y-8">

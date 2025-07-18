@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    blog: Blog;
+    projects: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +79,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    blog: BlogSelect<false> | BlogSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -86,7 +90,7 @@ export interface Config {
   };
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'en' | 'pl';
   user: User & {
     collection: 'users';
   };
@@ -158,6 +162,72 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog".
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  project_title: string;
+  featured_image: number | Media;
+  project_description: string;
+  abstract: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  tags?: string | null;
+  slug?: string | null;
+  publishedDate?: string | null;
+  status?: ('draft' | 'published') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -170,6 +240,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'blog';
+        value: number | Blog;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -252,6 +330,42 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog_select".
+ */
+export interface BlogSelect<T extends boolean = true> {
+  title?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  project_title?: T;
+  featured_image?: T;
+  project_description?: T;
+  abstract?: T;
+  tags?: T;
+  slug?: T;
+  publishedDate?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
