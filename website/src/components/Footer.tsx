@@ -35,6 +35,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('blog')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -47,14 +55,6 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold">{t('community')}</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {t('blog')}
-                </Link>
-              </li>
               <li>
                 <a
                   href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
