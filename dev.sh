@@ -55,8 +55,6 @@ main() {
     
     check_docker
     start_db
-    generate_client
-    run_migrations
     start_app
 }
 
