@@ -1,5 +1,5 @@
 {
-  "name": "vFly",
+  "name": "SKN Wirualnego Latania vFly",
   "short_name": "vFly",
   "icons": [
     {
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#154c8e",
+  "background_color": "#020618",
   "display": "standalone"
 }
