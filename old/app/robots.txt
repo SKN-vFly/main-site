@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://vfly.org.pl/sitemap.xml
