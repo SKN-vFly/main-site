@@ -1,6 +1,23 @@
 version: "3.9"
 
 services:
+  website_db:
+    container_name: website_db
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ["CMD", "pg_isready", "-d", "${POSTGRES_DB}", "-U", "${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
   nextapp:
     restart: unless-stopped
     container_name: nextapp
@@ -17,6 +34,16 @@ services:
     build: .
     ports:
       - "3112:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@website_db:5432/${POSTGRES_DB}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - NEXT_PUBLIC_DISCORD_INVITE_URL=${NEXT_PUBLIC_DISCORD_INVITE_URL}
+      - NEXT_PUBLIC_FACEBOOK_URL=${NEXT_PUBLIC_FACEBOOK_URL}
+      - NEXT_PUBLIC_GITHUB_URL=${NEXT_PUBLIC_GITHUB_URL}
+    depends_on:
+      website_db:
+        condition: service_healthy
 
 networks:
   default:
