@@ -1,9 +1,8 @@
 import { getTranslations } from 'next-intl/server'
-import { ProjectDisplay } from '@/components/ProjectDisplayWrapper'
+import { SearchableProjects } from '@/components/SearchableProjects'
 import { Project } from '@/payload-types'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
-import { Input } from '@/components/ui/input'
 
 async function getProjects() {
   try {
@@ -40,22 +39,13 @@ export default async function Projects() {
         </p>
       </div>
 
-      <div className="text-center mb-8">
-        <Input type="text" className="max-w-md mx-auto" placeholder={t('searchPlaceholder')} />
-      </div>
-
-      <div className="space-y-8">
-        <div className="text-center">
-          <p className="text-md italic text-muted-foreground">{t('clickToExplore')}</p>
-        </div>
-        {projects.length > 0 ? (
-          <ProjectDisplay projects={projects} learnMore={t('learnMore')} />
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">{t('notfound')}</p>
-          </div>
-        )}
-      </div>
+      <SearchableProjects
+        projects={projects}
+        learnMore={t('learnMore')}
+        searchPlaceholder={t('searchPlaceholder')}
+        notFoundText={t('notfound')}
+        clickToExplore={t('clickToExplore')}
+      />
     </div>
   )
 }

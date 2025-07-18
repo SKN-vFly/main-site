@@ -1,18 +1,30 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import { MediaHeader } from '@/components/MediaHeader'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { MicroscopeIcon, PartyPopperIcon, RocketIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function Landing() {
   const t = useTranslations('MainPage')
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const isDarkMode = mounted ? resolvedTheme === 'dark' : false
+
   return (
     <div className="w-full">
-      <section className="min-h-[90vh] flex flex-col items-center justify-center text-center space-y-8 px-4">
+      <section className="min-h-[90vh] flex flex-col items-center justify-center text-center space-y-8 px-4 mb-10">
         <MediaHeader text={t('title')} />
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6 mt-10">
           <h2 className="text-2xl md:text-3xl text-muted-foreground font-light italic">
             {t('subtitle')}
           </h2>
@@ -41,9 +53,6 @@ export default function Landing() {
 
       <section className="container mx-auto px-4 py-16 space-y-12">
         <div className="text-center space-y-4">
-          <Badge variant="outline" className="text-lg px-6 py-2">
-            {t('threePillars')}
-          </Badge>
           <h3 className="text-3xl md:text-4xl font-bold">{t('ourFoundation')}</h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {t('pillarsDescription')}
@@ -100,7 +109,13 @@ export default function Landing() {
           </CardHeader>
           <CardContent className="text-center pb-8">
             <Image
-              src="/invite_vfly.png"
+              src={
+                mounted
+                  ? isDarkMode
+                    ? '/invite_vfly.png'
+                    : '/invite_vfly_black.png'
+                  : '/invite_vfly_black.png'
+              }
               alt="Discord QR Code"
               width={350}
               height={350}

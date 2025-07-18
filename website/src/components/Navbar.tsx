@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link } from '@/i18n/routing'
 import { usePathname } from 'next/navigation'
@@ -17,13 +17,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import { Globe, Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'
+import { ExternalLink, Globe, Menu, X } from 'lucide-react'
 import { ThemeSwitcher } from './ThemeSwitcher'
+import { Separator } from './ui/separator'
 
 const Navbar = () => {
   const t = useTranslations('Components.Navbar')
   const pathname = usePathname()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Helper function to check if a path is active
   const isActive = (path: string) => {
@@ -110,61 +112,111 @@ const Navbar = () => {
             </Button>
 
             {/* Mobile Menu */}
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden hover:bg-accent/50 transition-colors"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle>Navigation</SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col space-y-4 mt-8">
-                  <Link
-                    href="/"
-                    className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive('/') ? 'text-primary font-semibold' : 'hover:text-primary'
-                    }`}
-                  >
-                    {t('home')}
-                  </Link>
-                  <Link
-                    href="/projects"
-                    className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive('/projects') ? 'text-primary font-semibold' : 'hover:text-primary'
-                    }`}
-                  >
-                    {t('projects')}
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className={`flex items-center space-x-2 text-lg font-medium transition-colors ${
-                      isActive('/contact') ? 'text-primary font-semibold' : 'hover:text-primary'
-                    }`}
-                  >
-                    {t('contact')}
-                  </Link>
-                  <div className="border-t pt-4 mt-4 space-y-4">
+              <SheetContent
+                side="right"
+                className="w-[340px] sm:w-[400px] p-0 border-l-2 border-border/20 [&>button]:hidden"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Header */}
+                  <div className="px-6 py-4 border-b border-border/10 bg-muted/20">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Theme</span>
-                      <ThemeSwitcher />
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/logo.svg"
+                            alt="Logo vFly"
+                            fill={true}
+                            className="object-contain"
+                          />
+                        </div>
+                        <SheetTitle className="font-bold text-lg">vFly</SheetTitle>
+                      </div>
+                      <SheetClose asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-10 w-10 hover:bg-accent/50 transition-colors"
+                        >
+                          <X className="h-6 w-6" />
+                        </Button>
+                      </SheetClose>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Language</span>
-                      <LangSwitcher />
-                    </div>
-                    <Button asChild className="w-full">
+                  </div>
+
+                  {/* Navigation Links */}
+                  <div className="flex-1 px-6 py-6">
+                    <nav className="space-y-2">
+                      <Link
+                        href="/"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`group flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                          isActive('/')
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'hover:bg-accent hover:text-accent-foreground active:scale-95'
+                        }`}
+                      >
+                        {t('home')}
+                      </Link>
+                      <Link
+                        href="/projects"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`group flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                          isActive('/projects')
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'hover:bg-accent hover:text-accent-foreground active:scale-95'
+                        }`}
+                      >
+                        {t('projects')}
+                      </Link>
+                      <Link
+                        href="/contact"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`group flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                          isActive('/contact')
+                            ? 'bg-primary text-primary-foreground shadow-sm'
+                            : 'hover:bg-accent hover:text-accent-foreground active:scale-95'
+                        }`}
+                      >
+                        {t('contact')}
+                      </Link>
                       <a
                         href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex justify-between items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200"
                       >
-                        {t('join')}
+                        <span>{t('join')}</span>
+                        <ExternalLink className="ml-2 w-4 h-4" />
                       </a>
-                    </Button>
+                    </nav>
+
+                    <Separator className="my-8" />
+
+                    {/* Settings Section */}
+                    <div className="space-y-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-muted/30">
+                          <span className="text-sm font-medium">Theme</span>
+                          <ThemeSwitcher />
+                        </div>
+                        <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-muted/30">
+                          <span className="text-sm font-medium">Language</span>
+                          <LangSwitcher />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </nav>
+                </div>
               </SheetContent>
             </Sheet>
           </div>

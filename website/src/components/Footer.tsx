@@ -48,6 +48,14 @@ export function Footer() {
             <h4 className="text-sm font-semibold">{t('community')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('blog')}
+                </Link>
+              </li>
+              <li>
                 <a
                   href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
                   target="_blank"
@@ -55,6 +63,26 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t('discord')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={process.env.NEXT_PUBLIC_FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('facebook')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={process.env.NEXT_PUBLIC_GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('github')}
                 </a>
               </li>
               <li>

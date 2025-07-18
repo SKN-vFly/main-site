@@ -8,8 +8,7 @@
     "aboutDescription1": "We are a community of enthusiasts, scientists, engineers, united under a common banner and goal of overcoming the limits of what is possible.",
     "aboutDescription2": "Our club was founded in 2014 at the Faculty of Automatic Control, Electronics and Computer Science with a mission to maintain and develop flight simulators available at the faculty. Where initially we were a small group of computer science and automation students, we now constitute one of the largest clubs at the Silesian University of Technology, bringing together people from across the university, from high school students through students to scientists.",
     "aboutDescription3": "As a result of such development, the scope of the club's activities has been significantly expanded, covering most of the fields available at the Silesian University of Technology, but we still have not abandoned our original mission and are strongly active in the field of flight simulators.",
-    "threePillars": "Three Pillars",
-    "ourFoundation": "Our Foundation",
+    "ourFoundation": "Three Pillars",
     "pillarsDescription": "We base our activities on three pillars: Research, Development, Entertainment.",
     "research": "Research",
     "researchSubtitle": "Scientific Excellence",
@@ -35,7 +34,7 @@
   },
   "ContactPage": {
     "contactHeader": "Meet Our Team",
-    "contactDescription": "Get to know the people who drive our projects and make vFly fly forward.",
+    "contactDescription": "Get to know the people who drive our projects",
     "leaders": "Our Leaders",
     "sectLeads": "Our Coordinators",
     "join": "Join Us!",
@@ -85,14 +84,18 @@
       "projects": "Projects",
       "contact": "Contact",
       "join": "Join Us!",
-      "lang": "English"
+      "lang": "English",
+      "navigation": "Navigation"
     },
     "Footer": {
       "about": "SKN vFly - Student Science Club with passion for aviation and technology projects.",
       "home": "Home",
       "navigation": "Navigation",
+      "blog": "Blog",
       "community": "Community",
       "discord": "Discord",
+      "facebook": "Facebook",
+      "github": "GitHub",
       "interested": "Interested in our projects? Join our community!",
       "projects": "Projects",
       "contact": "Contact",
