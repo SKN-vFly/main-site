@@ -31,7 +31,9 @@ services:
       - "traefik.http.routers.vfly.tls.domains[1].main=www.vfly.org.pl"
       - "traefik.http.routers.vfly.tls.domains[2].main=main.vfly.org.pl"
     image: nextapp
-    build: .
+    build:
+      context: ./website
+      dockerfile: Dockerfile
     ports:
       - "3112:3000"
     environment:
