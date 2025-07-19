@@ -1,5 +1,15 @@
 import { routing, redirect } from '@/i18n/routing'
 import type { localeType } from '@/i18n/routing'
+import { generateMetadata as generate } from '@/lib/metadata'
+import { Metadata } from 'next'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: localeType }>
+}): Promise<Metadata> {
+  return generate({ params })
+}
 
 export default async function Layout(
   props: Readonly<{

@@ -27,6 +27,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/list"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('projectsList')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/projects"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -39,14 +47,6 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t('blog')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {t('contact')}
                 </Link>
               </li>
             </ul>

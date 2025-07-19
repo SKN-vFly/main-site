@@ -49,6 +49,10 @@
     "interestedInJoining": "Interested in joining?",
     "joinDescription": "Are you passionate about new innovative technologies? Join our team and create the future with us!",
     "hoverNote": "Hover over the photo to see more information",
+    "faculty": "Faculty of Automatic Control, Electronics and Computer Science",
+    "university": "Silesian University of Technology",
+    "location": "Gliwice, Poland",
+    "ourLocation": "Our Location",
     "Meta": {
       "title": "Contact Us",
       "description": "Contact us and fly with us",
@@ -117,6 +121,7 @@
       "github": "GitHub",
       "interested": "Interested in our projects? Join our community!",
       "projects": "Projects",
+      "projectsList": "Projects List",
       "contact": "Contact",
       "join": "Join Us!",
       "allRightsReserved": "All rights reserved."
@@ -163,5 +168,7 @@
     "Media": {
       "alt": "Alt Text"
     }
-  }
+  },
+  "allProjects": "All Projects",
+  "allProjectsDescription": "Complete list of all our projects, sorted by publication date (newest first)"
 }

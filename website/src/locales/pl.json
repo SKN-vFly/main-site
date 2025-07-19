@@ -49,6 +49,10 @@
     "interestedInJoining": "Zainteresowany dołączeniem?",
     "joinDescription": "Jesteś pasjonatem nowych innowacyjnych technologii? Dołącz do naszego zespołu i twórz przyszłość razem z nami!",
     "hoverNote": "Najedź na zdjęcie, aby zobaczyć więcej informacji",
+    "faculty": "Wydział Automatyki, Elektroniki i Informatyki",
+    "university": "Politechnika Śląska",
+    "location": "Gliwice, Polska",
+    "ourLocation": "Nasza Siedziba",
     "Meta": {
       "title": "Skontaktuj się z nami",
       "description": "Skontaktuj się z nami i leć z nami",
@@ -117,6 +121,7 @@
       "github": "GitHub",
       "interested": "Zainteresowany naszymi projektami? Dołącz do naszej społeczności!",
       "projects": "Projekty",
+      "projectsList": "Lista Projektów",
       "contact": "Kontakt",
       "join": "Dołącz do nas!",
       "allRightsReserved": "Wszelkie prawa zastrzeżone."
@@ -163,5 +168,7 @@
     "Media": {
       "alt": "Tekst Alternatywny"
     }
-  }
+  },
+  "allProjects": "Wszystkie Projekty",
+  "allProjectsDescription": "Pełna lista wszystkich naszych projektów, posortowana według daty publikacji (od najnowszych)"
 }

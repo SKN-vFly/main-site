@@ -14,7 +14,7 @@ export async function generateMetadata({
 export default async function Layout(
   props: Readonly<{
     children: React.ReactNode
-    params: Promise<{ locale: localeType }>
+    params: Promise<{ locale: string }>
   }>,
 ) {
   const params = await props.params
@@ -23,7 +23,7 @@ export default async function Layout(
   const { children } = props
 
   if (!routing.locales.includes(locale as localeType)) {
-    redirect({ href: '/contact', locale: routing.defaultLocale })
+    redirect({ href: '/index', locale: routing.defaultLocale })
   }
   return children
 }
