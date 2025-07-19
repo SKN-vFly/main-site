@@ -15,17 +15,18 @@ async function getProjects() {
       },
       sort: '-publishedDate',
       depth: 2,
+      limit: 12, // Load first 12 projects
     })
-    return result.docs
+    return { docs: result.docs, totalDocs: result.totalDocs, hasNextPage: result.hasNextPage }
   } catch (error) {
     console.error('Failed to fetch projects:', error)
-    return []
+    return { docs: [], totalDocs: 0, hasNextPage: false }
   }
 }
 
 export default async function Projects() {
   const t = await getTranslations('ProjectsPage')
-  const projects = await getProjects()
+  const projectsData = await getProjects()
 
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
@@ -39,7 +40,7 @@ export default async function Projects() {
       </div>
 
       <SearchableProjects
-        projects={projects}
+        projects={projectsData.docs}
         learnMore={t('learnMore')}
         searchPlaceholder={t('searchPlaceholder')}
         notFoundText={t('notfound')}

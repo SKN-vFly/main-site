@@ -15,17 +15,18 @@ async function getBlogPosts() {
       },
       sort: '-publishedDate',
       depth: 2,
+      limit: 12, // Load first 12 posts
     })
-    return result.docs
+    return { docs: result.docs, totalDocs: result.totalDocs, hasNextPage: result.hasNextPage }
   } catch (error) {
     console.error('Failed to fetch blog posts:', error)
-    return []
+    return { docs: [], totalDocs: 0, hasNextPage: false }
   }
 }
 
 export default async function BlogPage() {
   const t = await getTranslations('BlogPage')
-  const posts = await getBlogPosts()
+  const blogData = await getBlogPosts()
 
   return (
     <div className="container mx-auto px-4 py-12 space-y-16">
@@ -39,7 +40,7 @@ export default async function BlogPage() {
       </div>
 
       <SearchableBlog
-        posts={posts}
+        posts={blogData.docs}
         readMore={t('readMore')}
         searchPlaceholder={t('searchPlaceholder')}
         notFoundText={t('notfound')}
